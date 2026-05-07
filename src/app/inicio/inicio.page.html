@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>¡Bienvenido a mi App!</ion-card-title>
+      <ion-card-subtitle>Proyecto de Evaluación - Ejercicio 1</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <!-- Aquí renderizo la variable dinámica que calculé en el TypeScript -->
+      <p>Hoy es: <strong>{{ fechaActual }}</strong></p>
+      <br>
+      <p>Esta es la pantalla de inicio de la aplicación desarrollada con Ionic Framework y Angular. Utiliza el menú lateral para navegar entre las diferentes secciones.</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
