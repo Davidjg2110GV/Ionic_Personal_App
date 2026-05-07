@@ -1,23 +1,56 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Inicio</ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title class="heading-serif">Inicio</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>¡Bienvenido a mi App!</ion-card-title>
-      <ion-card-subtitle>Proyecto de Evaluación - Ejercicio 1</ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content>
-      <!-- Aquí renderizo la variable dinámica que calculé en el TypeScript -->
-      <p>Hoy es: <strong>{{ fechaActual }}</strong></p>
-      <br>
-      <p>Esta es la pantalla de inicio de la aplicación desarrollada con Ionic Framework y Angular. Utiliza el menú lateral para navegar entre las diferentes secciones.</p>
-    </ion-card-content>
-  </ion-card>
+<ion-content [fullscreen]="true">
+
+  <!-- Hero / Bienvenida -->
+  <div class="hero-section">
+    <div class="hero-content">
+      <p class="hero-greeting">{{ saludo }} 👋</p>
+      <h1 class="hero-name heading-serif">David Gonzalez</h1>
+      <p class="hero-role">Ingeniero en Sistemas &bull; UNETI</p>
+      <p class="hero-date">{{ fechaActual }}</p>
+    </div>
+    <div class="hero-decoration"></div>
+  </div>
+
+  <!-- Tarjetas de contenido -->
+  <div class="content-section">
+
+    <div class="info-card welcome-card">
+      <div class="card-icon-wrapper">
+        <ion-icon name="rocket-outline"></ion-icon>
+      </div>
+      <h3 class="heading-serif">Bienvenido a mi App</h3>
+      <p>Esta aplicación fue desarrollada como parte de la evaluación práctica del <strong>Ejercicio 1</strong> con Ionic Framework y Angular.</p>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-number">3</div>
+        <div class="stat-label">Secciones</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">Ionic</div>
+        <div class="stat-label">Framework</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">TS</div>
+        <div class="stat-label">Lenguaje</div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="card-icon-wrapper secondary">
+        <ion-icon name="navigate-outline"></ion-icon>
+      </div>
+      <h3 class="heading-serif">Navegación</h3>
+      <p>Utiliza la barra inferior para explorar las diferentes secciones: <strong>Perfil</strong> para ver mi información académica y <strong>Contacto</strong> para enviar un mensaje.</p>
+    </div>
+
+  </div>
+
 </ion-content>

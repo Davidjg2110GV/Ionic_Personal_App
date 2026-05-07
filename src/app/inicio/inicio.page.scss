@@ -1,0 +1,172 @@
+// Estilos de la página de Inicio.
+// Diseñé un header tipo "hero" con gradiente teal para impactar visualmente al abrir la app,
+// seguido de tarjetas blancas con sombras suaves que flotan sobre un fondo claro.
+
+ion-toolbar {
+  --background: #2C4F5F;
+  --color: #ffffff;
+  --border-width: 0;
+}
+
+ion-content {
+  --background: #F0F4F7;
+}
+
+// --- Hero Section ---
+// Implementé una sección hero con gradiente y una decoración circular decorativa 
+// para darle un aspecto moderno y premium a la pantalla principal.
+.hero-section {
+  background: linear-gradient(160deg, #1B3A4B 0%, #2D6A7A 50%, #3A8595 100%);
+  padding: 40px 24px 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-decoration {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: -60px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-greeting {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0 0 6px;
+}
+
+.hero-name {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 4px;
+  letter-spacing: -0.5px;
+}
+
+.hero-role {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0 0 12px;
+}
+
+.hero-date {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+// --- Content Section ---
+.content-section {
+  padding: 20px 16px 30px;
+  margin-top: -20px;
+  position: relative;
+  z-index: 2;
+}
+
+// --- Info Cards ---
+// Diseñé las tarjetas con bordes redondeados amplios y sombras difuminadas 
+// para lograr el efecto de "elevación" que se aprecia en el sketch.
+.info-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 16px rgba(27, 58, 75, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:active {
+    transform: scale(0.98);
+    box-shadow: 0 1px 8px rgba(27, 58, 75, 0.12);
+  }
+
+  h3 {
+    font-size: 18px;
+    color: #1E2D3A;
+    margin: 12px 0 8px;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 14px;
+    color: #5D6D7E;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+.card-icon-wrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2C4F5F, #3A7A8C);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ion-icon {
+    color: #ffffff;
+    font-size: 22px;
+  }
+
+  &.secondary {
+    background: linear-gradient(135deg, #E05A47, #E87D6E);
+  }
+}
+
+// --- Stats Row ---
+// Creé una fila de mini-estadísticas para mostrar datos rápidos de la app.
+// El diseño de 3 columnas iguales da equilibrio visual.
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.stat-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px 12px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(27, 58, 75, 0.07);
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #2C4F5F;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    color: #7A9AAE;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}

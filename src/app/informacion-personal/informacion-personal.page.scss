@@ -1,0 +1,198 @@
+// Estilos de la página Información Personal.
+// Me basé en el sketch para crear un layout de tarjetas blancas flotantes 
+// sobre un fondo con gradiente teal, emulando el diseño de perfil profesional.
+
+ion-toolbar {
+  --background: #2C4F5F;
+  --color: #ffffff;
+  --border-width: 0;
+}
+
+ion-content {
+  --background: linear-gradient(160deg, #1B3A4B 0%, #2D6A7A 50%, #3A8595 100%);
+}
+
+// --- Container principal ---
+.profile-page {
+  padding: 16px;
+  padding-bottom: 32px;
+}
+
+// --- Tarjeta base ---
+// Utilizo bordes redondeados amplios (16px) y sombras difuminadas para lograr
+// el efecto de tarjetas "flotantes" que se ven en el sketch de referencia.
+.profile-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 22px 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+// --- Cabecera de cada tarjeta ---
+// Reproduzco el estilo del sketch donde cada tarjeta tiene un ícono + título con tipografía serif.
+.card-header-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #EDF2F5;
+}
+
+.card-header-icon {
+  font-size: 22px;
+  color: #2C4F5F;
+  flex-shrink: 0;
+}
+
+.card-header-row h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1E2D3A;
+  margin: 0;
+  font-style: italic;
+}
+
+// --- Resumen Profesional ---
+.resumen-card .resumen-content {
+  text-align: center;
+}
+
+.avatar-wrapper {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  margin: 0 auto 14px;
+  overflow: hidden;
+  border: 3px solid #EDF2F5;
+  box-shadow: 0 4px 16px rgba(44, 79, 95, 0.15);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.profile-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1E2D3A;
+  margin: 0 0 4px;
+}
+
+.profile-id {
+  font-size: 13px;
+  color: #7A9AAE;
+  margin: 0 0 14px;
+  font-weight: 500;
+}
+
+.profile-bio {
+  font-size: 13.5px;
+  color: #5D6D7E;
+  line-height: 1.65;
+  margin: 0;
+  text-align: left;
+}
+
+// --- Grid de 2 columnas ---
+// Implementé CSS Grid para que en pantallas anchas (tablets) las tarjetas
+// de Educación y Experiencia se muestren lado a lado, como en el sketch.
+// En teléfonos se apilan verticalmente para mejor legibilidad.
+.two-col-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 0;
+
+  .profile-card {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 576px) {
+  .two-col-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// --- Entradas de Educación / Experiencia ---
+.entry {
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #F5F7F9;
+
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+.entry-title {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #1E2D3A;
+  margin: 0 0 4px;
+}
+
+.entry-detail {
+  font-size: 13px;
+  color: #5D6D7E;
+  margin: 0 0 6px;
+  line-height: 1.4;
+}
+
+.entry-badge {
+  display: inline-block;
+  background: #EAF4F7;
+  color: #2C4F5F;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+}
+
+.entry-desc {
+  font-size: 12.5px;
+  color: #7A9AAE;
+  margin: 0;
+  line-height: 1.4;
+}
+
+// --- Habilidades (Chips) ---
+// Renderizo las habilidades como "chips" con fondo suave, tal como aparece
+// en la sección inferior derecha del sketch de referencia.
+.chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-chip {
+  display: inline-block;
+  background: #F0F4F7;
+  color: #2C4F5F;
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: 20px;
+  border: 1px solid #E0E8ED;
+  letter-spacing: 0.2px;
+  transition: all 0.2s ease;
+
+  &:active {
+    background: #2C4F5F;
+    color: #ffffff;
+    border-color: #2C4F5F;
+  }
+}

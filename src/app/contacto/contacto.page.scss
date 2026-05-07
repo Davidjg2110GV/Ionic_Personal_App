@@ -1,0 +1,191 @@
+// Estilos de la página de Contacto.
+// Mantuve la misma estética de gradiente teal y tarjetas blancas flotantes
+// para dar coherencia visual con el resto de la aplicación.
+
+ion-toolbar {
+  --background: #2C4F5F;
+  --color: #ffffff;
+  --border-width: 0;
+}
+
+ion-content {
+  --background: linear-gradient(160deg, #1B3A4B 0%, #2D6A7A 50%, #3A8595 100%);
+}
+
+.contact-page {
+  padding: 16px;
+  padding-bottom: 32px;
+}
+
+// --- Encabezado del formulario ---
+.contact-header {
+  text-align: center;
+  padding: 20px 16px 28px;
+}
+
+.contact-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+  backdrop-filter: blur(8px);
+
+  ion-icon {
+    font-size: 26px;
+    color: #ffffff;
+  }
+}
+
+.contact-header h2 {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.contact-header p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13.5px;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+// --- Tarjeta del formulario ---
+.contact-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px 20px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  margin-bottom: 20px;
+}
+
+// --- Grupos de formulario ---
+// Diseñé inputs personalizados con íconos integrados a la izquierda
+// para mejorar la usabilidad y dar un aspecto más pulido que los inputs estándar de Ionic.
+.form-group {
+  margin-bottom: 18px;
+
+  &:last-of-type {
+    margin-bottom: 24px;
+  }
+}
+
+.form-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #2C4F5F;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 6px;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  background: #F5F8FA;
+  border: 1.5px solid #E0E8ED;
+  border-radius: 12px;
+  padding: 0 14px;
+  transition: all 0.25s ease;
+
+  &:focus-within {
+    border-color: #2C4F5F;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(44, 79, 95, 0.08);
+  }
+}
+
+.input-icon {
+  font-size: 18px;
+  color: #7A9AAE;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.input-wrapper input,
+.input-wrapper textarea {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #1E2D3A;
+  padding: 13px 0;
+  outline: none;
+
+  &::placeholder {
+    color: #A8B8C4;
+  }
+}
+
+.textarea-wrapper {
+  align-items: flex-start;
+
+  .input-icon {
+    margin-top: 14px;
+  }
+
+  textarea {
+    resize: none;
+    line-height: 1.5;
+  }
+}
+
+// --- Botón de envío ---
+// Usé el color coral del acento para que el botón destaque como acción principal,
+// con un efecto hover/active suave para feedback táctil.
+.send-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #E05A47, #C04A3A);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 15px 24px;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(224, 90, 71, 0.3);
+
+  ion-icon {
+    font-size: 18px;
+  }
+
+  &:active {
+    transform: scale(0.97);
+    box-shadow: 0 2px 8px rgba(224, 90, 71, 0.4);
+  }
+}
+
+// --- Info de contacto inferior ---
+.contact-info-row {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 8px 0;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+
+  ion-icon {
+    font-size: 16px;
+  }
+}

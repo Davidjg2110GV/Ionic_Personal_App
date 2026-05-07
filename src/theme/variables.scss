@@ -1,2 +1,50 @@
-// For information on how to create your own theme, please refer to:
-// https://ionicframework.com/docs/theming/
+// Paleta de colores profesional basada en el sketch del usuario.
+// Utilicé tonos teal/azul acero para transmitir confianza y profesionalismo,
+// combinados con un acento coral para los elementos interactivos.
+
+:root {
+  // --- Colores primarios (teal oscuro profesional) ---
+  --ion-color-primary: #2C4F5F;
+  --ion-color-primary-rgb: 44, 79, 95;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #254554;
+  --ion-color-primary-tint: #41616f;
+
+  // --- Colores secundarios (teal medio) ---
+  --ion-color-secondary: #3A7A8C;
+  --ion-color-secondary-rgb: 58, 122, 140;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #336B7B;
+  --ion-color-secondary-tint: #4E8898;
+
+  // --- Color de acento (coral/rojo cálido) ---
+  --ion-color-danger: #E05A47;
+  --ion-color-danger-rgb: 224, 90, 71;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #C44F3E;
+  --ion-color-danger-tint: #E36B5A;
+
+  // --- Éxito ---
+  --ion-color-success: #2ECC71;
+  --ion-color-success-rgb: 46, 204, 113;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 255, 255, 255;
+  --ion-color-success-shade: #28B463;
+  --ion-color-success-tint: #43D17F;
+
+  // --- Warning ---
+  --ion-color-warning: #F39C12;
+  --ion-color-warning-rgb: 243, 156, 18;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0, 0, 0;
+  --ion-color-warning-shade: #D68910;
+  --ion-color-warning-tint: #F4A62A;
+
+  // --- Fondo y tipografía ---
+  --ion-background-color: #F0F4F7;
+  --ion-text-color: #1E2D3A;
+  --ion-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}

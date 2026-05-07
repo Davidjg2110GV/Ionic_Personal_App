@@ -7,23 +7,36 @@ import { Component, OnInit } from '@angular/core';
   standalone: false,
 })
 export class InicioPage implements OnInit {
-  
-  // Declaro una variable para almacenar la fecha de acceso actual.
-  // La idea es mostrarle al usuario un mensaje de bienvenida personalizado con la fecha,
-  // para darle un toque más dinámico a la pantalla principal.
+
+  // Almaceno la fecha actual formateada para mostrar un saludo dinámico.
+  // La idea es que cada vez que el usuario abra la app, vea la fecha del día
+  // lo que le da una sensación de contenido actualizado y profesional.
   fechaActual: string = '';
+
+  // Almaceno la hora para personalizar el saludo (Buenos días / tardes / noches).
+  // Esto demuestra que manejo lógica condicional en TypeScript basada en datos del sistema.
+  saludo: string = '';
 
   constructor() { }
 
   ngOnInit() {
-    // Al inicializar el componente, configuro la fecha de hoy.
-    // Decidí usar toLocaleDateString() para asegurarme de que el formato sea comprensible
-    // y se adapte al idioma local de quien evalúe la app.
-    this.fechaActual = new Date().toLocaleDateString('es-ES', { 
-      weekday: 'long', 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
+    // Formateo la fecha en español con formato completo para mayor legibilidad.
+    this.fechaActual = new Date().toLocaleDateString('es-ES', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
     });
+
+    // Determino el saludo apropiado según la hora del día.
+    // Esto personaliza la experiencia de usuario de forma sutil pero efectiva.
+    const hora = new Date().getHours();
+    if (hora < 12) {
+      this.saludo = 'Buenos días';
+    } else if (hora < 18) {
+      this.saludo = 'Buenas tardes';
+    } else {
+      this.saludo = 'Buenas noches';
+    }
   }
 }

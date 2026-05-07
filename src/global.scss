@@ -1,12 +1,6 @@
 /*
  * App Global CSS
- * ----------------------------------------------------------------------------
- * Put style rules here that you want to apply globally. These styles are for
- * the entire app and not just one component. Additionally, this file can be
- * used as an entry point to import other CSS/Sass files to be included in the
- * output CSS.
- * For more information on global stylesheets, visit the documentation:
- * https://ionicframework.com/docs/layout/global-stylesheets
+ * Configuración global de estilos para toda la aplicación.
  */
 
 /* Core CSS required for Ionic components to work properly */
@@ -18,20 +12,48 @@
 @import "@ionic/angular/css/typography.css";
 @import "@ionic/angular/css/display.css";
 
-/* Optional CSS utils that can be commented out */
+/* Optional CSS utils */
 @import "@ionic/angular/css/padding.css";
 @import "@ionic/angular/css/float-elements.css";
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
-/**
- * Ionic Dark Mode
- * -----------------------------------------------------
- * For more info, please see:
- * https://ionicframework.com/docs/theming/dark-mode
- */
+/* =========================================================
+   Estilos globales personalizados
+   ========================================================= */
 
-/* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import "@ionic/angular/css/palettes/dark.system.css";
+// Decidí aplicar la fuente Inter globalmente porque ofrece una legibilidad 
+// excelente en pantallas móviles y transmite un aire profesional moderno.
+* {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+// Clase utilitaria para los títulos elegantes con la tipografía serif.
+// La aplico en las cabeceras de las tarjetas para darles ese toque editorial
+// que se ve en el sketch de referencia.
+.heading-serif {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+}
+
+// Fuerzo el modo claro para que la paleta de colores se mantenga consistente
+// independientemente de la configuración del sistema operativo del usuario.
+body {
+  --ion-background-color: #F0F4F7;
+  background: #F0F4F7;
+}
+
+// Desactivo completamente el dark mode para que mi diseño no se vea alterado.
+// Esto es intencional ya que la paleta está optimizada para modo claro.
+@media (prefers-color-scheme: dark) {
+  body {
+    --ion-background-color: #F0F4F7;
+    --ion-text-color: #1E2D3A;
+    --ion-background-color-rgb: 240, 244, 247;
+    --ion-text-color-rgb: 30, 45, 58;
+  }
+
+  ion-content {
+    --background: linear-gradient(160deg, #1B3A4B 0%, #2D6A7A 50%, #3A8595 100%);
+  }
+}

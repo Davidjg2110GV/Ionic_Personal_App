@@ -13,6 +13,8 @@ export class ContactoPage implements OnInit {
   // Lo estructuré así para poder capturar fácilmente lo que el usuario escribe en la interfaz
   // y luego procesarlo en la función de envío.
   formularioContacto = {
+    nombre: '',
+    email: '',
     asunto: '',
     mensaje: ''
   };
@@ -28,17 +30,28 @@ export class ContactoPage implements OnInit {
   // Decidí hacerlo asíncrono (async/await) porque el componente Toast de Ionic devuelve una promesa
   // y de esta forma el código es mucho más legible que encadenando .then()
   async enviarMensaje() {
-    // Lógica básica de validación: me aseguro de que no me envíen campos vacíos
-    if(this.formularioContacto.asunto.trim() === '' || this.formularioContacto.mensaje.trim() === '') {
+    // Lógica de validación: verifico que todos los campos del formulario estén completos
+    // antes de procesar el envío. Uso trim() para evitar que espacios en blanco cuenten.
+    const { nombre, email, asunto, mensaje } = this.formularioContacto;
+
+    if (!nombre.trim() || !email.trim() || !asunto.trim() || !mensaje.trim()) {
       await this.mostrarNotificacion('Por favor completa todos los campos.', 'warning');
+      return;
+    }
+
+    // Validación básica de email usando una expresión regular simple.
+    // Verifico que contenga @ y un dominio para evitar envíos con datos inválidos.
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      await this.mostrarNotificacion('Por favor ingresa un email válido.', 'warning');
       return;
     }
 
     // Si todo está correcto, simulo el envío y limpio el formulario
     await this.mostrarNotificacion('¡Mensaje enviado correctamente!', 'success');
-    
+
     // Reseteo mi modelo para dejar la interfaz limpia tras el envío exitoso
-    this.formularioContacto = { asunto: '', mensaje: '' };
+    this.formularioContacto = { nombre: '', email: '', asunto: '', mensaje: '' };
   }
 
   // Creé un método auxiliar reutilizable para generar las alertas visuales.
