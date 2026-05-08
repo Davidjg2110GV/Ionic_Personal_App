@@ -1,6 +1,5 @@
-// Estilos de la página Información Personal.
-// Me basé en el sketch para crear un layout de tarjetas blancas flotantes 
-// sobre un fondo con gradiente teal, emulando el diseño de perfil profesional.
+// Estilos de la página de Información Personal
+// Tarjetas con glassmorphism sobre fondo gradiente azul marino.
 
 ion-toolbar {
   --background: #0A1929;
@@ -12,45 +11,32 @@ ion-content {
   --background: linear-gradient(135deg, #0A1929 0%, #112A46 50%, #153A62 100%);
 }
 
-// --- Container principal ---
-// Añadimos un max-width y margin: 0 auto. Esto es CRUCIAL para evitar 
-// que en un monitor de PC el diseño se estire a lo ancho de forma genérica.
-// Así mantenemos proporciones legibles y elegantes (tipo tarjeta central).
 .profile-page {
   padding: 24px 16px 40px;
   max-width: 800px;
   margin: 0 auto;
 }
 
-// --- Tarjeta base (Premium UI) ---
-// Utilizo bordes más amplios (20px), fondo con transparencia sutil, filtro de desenfoque (backdrop-filter)
-// y sombras expansivas suaves. Esto le quita el aspecto "aburrido" y plano, y le da un acabado 
-// "Glassmorphism" (cristalizado), muy utilizado en el diseño UI de alto nivel actual.
+// Tarjeta base con Glassmorphism
 .profile-card {
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
   border-radius: 20px;
   padding: 28px 24px;
   margin-bottom: 24px;
-  box-shadow: 0 12px 32px rgba(10, 25, 41, 0.08); // Sombra en tono azul profundo
+  box-shadow: 0 12px 32px rgba(10, 25, 41, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.8);
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
 
-  // Interacción al pasar el mouse (solo en PC) para dar dinamismo
   @media (hover: hover) {
     &:hover {
       transform: translateY(-4px);
       box-shadow: 0 16px 40px rgba(10, 25, 41, 0.12);
     }
   }
-
-  &:active {
-    transform: scale(0.98);
-  }
+  &:active { transform: scale(0.98); }
 }
 
-// --- Cabecera de cada tarjeta ---
-// Reproduzco el estilo del sketch donde cada tarjeta tiene un ícono + título con tipografía serif.
 .card-header-row {
   display: flex;
   align-items: center;
@@ -74,10 +60,7 @@ ion-content {
   font-style: italic;
 }
 
-// --- Resumen Profesional ---
-.resumen-card .resumen-content {
-  text-align: center;
-}
+.resumen-card .resumen-content { text-align: center; }
 
 .avatar-wrapper {
   width: 110px;
@@ -87,16 +70,11 @@ ion-content {
   overflow: hidden;
   border: 3px solid #EDF2F5;
   box-shadow: 0 4px 16px rgba(10, 25, 41, 0.15);
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  img { width: 100%; height: 100%; object-fit: cover; }
 }
 
 .profile-name {
-  font-size: 42px; // Aumentado para la fuente cursive 'Royal'
+  font-size: 42px;
   margin: 0 0 4px;
   line-height: 1.2;
 }
@@ -116,53 +94,28 @@ ion-content {
   text-align: left;
 }
 
-// --- Grid de 2 columnas ---
-// Implementé CSS Grid para que en pantallas anchas (tablets y PC) las tarjetas
-// de Educación y Experiencia se muestren lado a lado.
-// Modifiqué el gap a 24px para que "respiren" mejor visualmente.
+// Grid: 1 columna en móvil, 2 en desktop (>= 576px)
 .two-col-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
   margin-bottom: 24px;
-
-  .profile-card {
-    margin-bottom: 0;
-  }
+  .profile-card { margin-bottom: 0; }
 }
 
 @media (min-width: 576px) {
-  .two-col-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+  .two-col-grid { grid-template-columns: 1fr 1fr; }
 }
 
-// --- Entradas de Educación / Experiencia ---
 .entry {
   margin-bottom: 16px;
   padding-bottom: 14px;
   border-bottom: 1px solid #F5F7F9;
-
-  &:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
-  }
+  &:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
 }
 
-.entry-title {
-  font-size: 14.5px;
-  font-weight: 600;
-  color: #1E2D3A;
-  margin: 0 0 4px;
-}
-
-.entry-detail {
-  font-size: 13px;
-  color: #5D6D7E;
-  margin: 0 0 6px;
-  line-height: 1.4;
-}
+.entry-title { font-size: 14.5px; font-weight: 600; color: #1E2D3A; margin: 0 0 4px; }
+.entry-detail { font-size: 13px; color: #5D6D7E; margin: 0 0 6px; line-height: 1.4; }
 
 .entry-badge {
   display: inline-block;
@@ -172,25 +125,13 @@ ion-content {
   font-weight: 600;
   padding: 3px 10px;
   border-radius: 20px;
-  letter-spacing: 0.3px;
 }
 
-.entry-desc {
-  font-size: 12.5px;
-  color: #7A9AAE;
-  margin: 0;
-  line-height: 1.4;
-}
+.entry-desc { font-size: 12.5px; color: #7A9AAE; margin: 0; line-height: 1.4; }
 
-// --- Habilidades (Chips) ---
-// Renderizo las habilidades como "chips" con fondo suave, tal como aparece
-// en la sección inferior derecha del sketch de referencia.
-.chips-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
+.chips-container { display: flex; flex-wrap: wrap; gap: 8px; }
 
+// Chip: nombre de habilidad + badge de nivel
 .skill-chip {
   display: inline-flex;
   align-items: center;
@@ -202,7 +143,6 @@ ion-content {
   padding: 6px 6px 6px 14px;
   border-radius: 30px;
   border: 1px solid rgba(224, 232, 237, 0.8);
-  letter-spacing: 0.2px;
   transition: all 0.25s ease;
 
   .skill-level {
@@ -213,7 +153,6 @@ ion-content {
     text-transform: uppercase;
     padding: 4px 10px;
     border-radius: 20px;
-    letter-spacing: 0.5px;
     box-shadow: 0 2px 6px rgba(10, 25, 41, 0.2);
   }
 
@@ -225,8 +164,5 @@ ion-content {
       box-shadow: 0 4px 12px rgba(44, 79, 95, 0.06);
     }
   }
-
-  &:active {
-    transform: scale(0.97);
-  }
+  &:active { transform: scale(0.97); }
 }

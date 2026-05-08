@@ -1,6 +1,6 @@
-// Estilos de la página de Inicio.
-// Diseñé un header tipo "hero" con gradiente teal para impactar visualmente al abrir la app,
-// seguido de tarjetas blancas con sombras suaves que flotan sobre un fondo claro.
+// Estilos de la página de Inicio
+// Se aplica un diseño tipo "Hero Banner" con gradiente azul marino,
+// seguido de tarjetas blancas con efecto glassmorphism.
 
 ion-toolbar {
   --background: #0A1929;
@@ -12,17 +12,16 @@ ion-content {
   --background: #F0F4F7;
 }
 
-// --- Hero Section ---
-// Implementé una sección hero con gradiente y una decoración circular decorativa 
-// para darle un aspecto moderno y premium a la pantalla principal.
+// Hero Section: gradiente oscuro con decoración circular
 .hero-section {
   background: linear-gradient(135deg, #0A1929 0%, #112A46 50%, #153A62 100%);
-  padding: 50px 24px 80px; // Aumentado para dar un aspecto de "Banner" más imponente
+  padding: 50px 24px 80px;
   position: relative;
   overflow: hidden;
-  margin-top: -1px; // Evita pequeñas líneas blancas con el toolbar
+  margin-top: -1px;
 }
 
+// Elemento decorativo circular (pseudo-elemento para profundidad visual)
 .hero-decoration {
   position: absolute;
   top: -40px;
@@ -45,12 +44,13 @@ ion-content {
   }
 }
 
+// Contenido del Hero centrado con max-width para responsividad
 .hero-content {
   position: relative;
   z-index: 1;
   max-width: 800px;
   margin: 0 auto;
-  text-align: center; // Centramos el texto según el nuevo diseño premium
+  text-align: center;
 }
 
 .hero-greeting {
@@ -60,9 +60,10 @@ ion-content {
   margin: 0 0 6px;
 }
 
+// Nombre principal con tamaño grande para la fuente cursiva Royal
 .hero-name {
   color: #ffffff;
-  font-size: 48px; // Aumentado significativamente para destacar la fuente script 'Royal'
+  font-size: 48px;
   font-weight: 400;
   margin: 0 0 4px;
   line-height: 1.2;
@@ -83,12 +84,10 @@ ion-content {
   margin: 0;
 }
 
-// --- Content Section ---
-// Restringimos el ancho máximo en pantallas grandes para que el contenido
-// se mantenga centrado, proporcionado y elegante, sin estirarse en monitores ultrawide.
+// Content Section: margen negativo para que las tarjetas se solapen con el Hero
 .content-section {
   padding: 0 16px 40px;
-  margin-top: -40px; // Aumentamos el solapamiento negativo para que la tarjeta pise más el Hero
+  margin-top: -40px;
   position: relative;
   z-index: 2;
   max-width: 800px;
@@ -96,9 +95,7 @@ ion-content {
   margin-right: auto;
 }
 
-// --- Info Cards (Premium UI) ---
-// Empleamos Glassmorphism: fondo translúcido, bordes de 20px, y desenfoque.
-// Esto diferencia un sistema básico de uno moderno y de "alto nivel".
+// Tarjetas con efecto Glassmorphism (fondo translúcido + desenfoque)
 .info-card {
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
@@ -109,6 +106,7 @@ ion-content {
   border: 1px solid rgba(255, 255, 255, 0.8);
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
 
+  // Hover solo para dispositivos con ratón (desktop)
   @media (hover: hover) {
     &:hover {
       transform: translateY(-4px);
@@ -116,10 +114,12 @@ ion-content {
     }
   }
 
+  // Feedback táctil para móvil
   &:active {
     transform: scale(0.98);
   }
 
+  // Variante centrada para la tarjeta de bienvenida
   &.welcome-card {
     text-align: center;
     display: flex;
@@ -142,15 +142,17 @@ ion-content {
   }
 }
 
+// Ícono grande para la tarjeta de bienvenida
 .large-icon-wrapper {
   font-size: 56px;
-  color: #0A1929; // Azul profundo acorde al tema
+  color: #0A1929;
   margin-bottom: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+// Wrapper para íconos pequeños en tarjetas secundarias
 .card-icon-wrapper {
   width: 44px;
   height: 44px;
@@ -170,9 +172,7 @@ ion-content {
   }
 }
 
-// --- Stats Row ---
-// Aumenté el gap y el margin-bottom a 24px para que coincida con el estándar
-// de separación visual (blancos espaciales) de las tarjetas principales.
+// Fila de estadísticas con CSS Grid (3 columnas iguales)
 .stats-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -180,13 +180,14 @@ ion-content {
   margin-bottom: 24px;
 }
 
+// Mini-tarjetas de estadísticas
 .stat-card {
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(10px);
   border-radius: 16px;
   padding: 20px 10px;
   text-align: center;
-  box-shadow: 0 8px 24px rgba(10, 25, 41, 0.08); // Sombra adaptada al azul oscuro
+  box-shadow: 0 8px 24px rgba(10, 25, 41, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.9);
 
   .stat-icon {
@@ -198,6 +199,7 @@ ion-content {
     margin-right: auto;
   }
 
+  // Ícono personalizado para TypeScript (no existe en Ionicons)
   .ts-icon {
     width: 32px;
     height: 32px;
@@ -213,7 +215,7 @@ ion-content {
   }
 
   .stat-number {
-    font-family: 'Inter', sans-serif; // Cambiamos a sans-serif para las estadísticas según la imagen
+    font-family: 'Inter', sans-serif;
     font-size: 24px;
     font-weight: 700;
     color: #0A1929;

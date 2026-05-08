@@ -8,10 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InformacionPersonalPage implements OnInit {
 
-  // Construí un objeto para agrupar mis datos personales.
-  // Prefiero estructurar la información en un objeto en lugar de usar variables sueltas
-  // porque me permite mantener el código ordenado y facilita la futura integración con una API
-  // en caso de que esta información necesite venir de una base de datos.
+  // Datos personales agrupados en un objeto para facilitar su uso en el template
   misDatos = {
     nombre: 'David Jesus Gonzalez Villegas',
     cedula: 'V-30.085.011',
@@ -20,31 +17,26 @@ export class InformacionPersonalPage implements OnInit {
     fotoUrl: 'https://i.ibb.co/ZzphLGyc/IMG-20251204-070842-288.jpg'
   };
 
-  // Organicé mi resumen profesional como string separado para poder mostrarlo
-  // en la tarjeta principal sin saturar el objeto de datos.
+  // Resumen profesional como string independiente
   resumenProfesional: string = 'Estudiante de Ingeniería en Sistemas, apasionado por el desarrollo de aplicaciones móviles y soluciones tecnológicas innovadoras. Con conocimientos en frameworks modernos y metodologías ágiles de desarrollo de software.';
 
-  // Estructuré mi historial educativo como un arreglo de objetos.
-  // Esto me permite iterar fácilmente con *ngFor en el template y agregar
-  // más entradas en el futuro sin modificar la estructura HTML.
+  // Historial educativo como arreglo de objetos para iterar con *ngFor
   educacion = [
     {
       titulo: 'Ingeniería en Sistemas',
-      institucion: 'UNETI', //Universidad Nacional Experimental de las Telecomunicaciones e Informática
+      institucion: 'UNETI',
       periodo: '2023 - Presente',
       nota: 'En curso'
     },
     {
       titulo: 'Bachiller en Ciencias',
-      institucion: 'U.E.N. Benito Canónico', //Unidad Educativa Nacional Benito Canónico
+      institucion: 'U.E.N. Benito Canónico',
       periodo: '2015 - 2020',
       nota: 'Graduado'
     }
   ];
 
-  // Hice lo mismo con la experiencia: un arreglo de objetos con estructura uniforme.
-  // Decidí incluir tanto experiencia laboral como proyectos académicos relevantes 
-  // para demostrar capacidad técnica.
+  // Experiencia profesional estructurada de la misma forma
   experiencia = [
     {
       cargo: 'Técnico de hardware y soporte operativo',
@@ -60,9 +52,7 @@ export class InformacionPersonalPage implements OnInit {
     }
   ];
 
-  // Las habilidades las definí como un arreglo simple de strings.
-  // En el template las renderizo como "chips" o etiquetas avanzadas, 
-  // agrupando el nombre de la tecnología y el nivel de dominio en un solo objeto.
+  // Habilidades con nombre y nivel para renderizar como chips avanzados
   habilidades = [
     { nombre: 'Ionic & Angular', nivel: 'Junior' },
     { nombre: 'TypeScript', nivel: 'Junior' },

@@ -1,18 +1,16 @@
 /*
- * App Global CSS
- * Configuración global de estilos para toda la aplicación.
+ * Estilos globales de la aplicación
+ * Tipografías, clases utilitarias y configuración de modo claro.
  */
 
-/* Core CSS required for Ionic components to work properly */
+/* CSS base de Ionic */
 @import "@ionic/angular/css/core.css";
-
-/* Basic CSS for apps built with Ionic */
 @import "@ionic/angular/css/normalize.css";
 @import "@ionic/angular/css/structure.css";
 @import "@ionic/angular/css/typography.css";
 @import "@ionic/angular/css/display.css";
 
-/* Optional CSS utils */
+/* Utilidades opcionales de Ionic */
 @import "@ionic/angular/css/padding.css";
 @import "@ionic/angular/css/float-elements.css";
 @import "@ionic/angular/css/text-alignment.css";
@@ -20,38 +18,33 @@
 @import "@ionic/angular/css/flex-utils.css";
 
 /* =========================================================
-   Estilos globales personalizados
+   Estilos personalizados
    ========================================================= */
 
-// Decidí aplicar la fuente Inter globalmente porque ofrece una legibilidad 
-// excelente en pantallas móviles y transmite un aire profesional moderno.
+// Fuente principal: Inter (Google Fonts) para legibilidad en pantallas móviles
 * {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-// Clase utilitaria para los títulos elegantes con la tipografía serif.
-// La aplico en las cabeceras de las tarjetas para darles ese toque editorial.
+// Títulos elegantes con tipografía serif (Playfair Display)
 .heading-serif {
   font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
 }
 
-// Clase utilitaria para títulos ultra-elegantes tipo firma (Royal Script)
-// Ideal para nombres propios o destacables.
+// Títulos caligráficos tipo firma (Great Vibes)
 .heading-royal {
   font-family: 'Great Vibes', cursive;
   font-weight: 400;
   letter-spacing: 1px;
 }
 
-// Aumentamos el tamaño si se usa en el Navbar
+// Tamaño aumentado para la fuente Royal en el Navbar
 ion-title.heading-royal {
   font-size: 28px !important;
-  overflow: visible; // Permite que los trazos de la firma no se corten
+  overflow: visible;
 }
 
-// Efecto de texto "Champagne Gold" con alto contraste y elegancia
-// SOLO para fondos OSCUROS (navbars, hero sections con fondo azul marino).
-// Los tonos crema brillantes resaltan perfectamente contra #0A1929.
+// Gradiente champagne gold para textos sobre fondos oscuros
 .text-gold {
   background: linear-gradient(135deg, #E8D5B7, #FFF8EC, #D4B896, #F5E6D0, #C9A96E);
   -webkit-background-clip: text;
@@ -60,9 +53,7 @@ ion-title.heading-royal {
   filter: brightness(1.1);
 }
 
-// Efecto elegante para fondos CLAROS (tarjetas blancas, cards).
-// Usa tonos azul marino profundo con un brillo metálico sutil.
-// Así la tipografía Royal se lee perfectamente sobre blanco.
+// Gradiente azul marino para textos sobre fondos claros (tarjetas blancas)
 .text-navy-royal {
   background: linear-gradient(135deg, #0A1929, #1A3A5C, #0D2137, #153A62);
   -webkit-background-clip: text;
@@ -70,15 +61,13 @@ ion-title.heading-royal {
   background-clip: text;
 }
 
-// Fuerzo el modo claro para que la paleta de colores se mantenga consistente
-// independientemente de la configuración del sistema operativo del usuario.
+// Modo claro forzado para mantener consistencia visual
 body {
   --ion-background-color: #F0F4F7;
   background: #F0F4F7;
 }
 
-// Desactivo completamente el dark mode para que mi diseño no se vea alterado.
-// Esto es intencional ya que la paleta está optimizada para modo claro.
+// Desactivación de dark mode para preservar la paleta de colores
 @media (prefers-color-scheme: dark) {
   body {
     --ion-background-color: #F0F4F7;
@@ -86,8 +75,7 @@ body {
     --ion-background-color-rgb: 240, 244, 247;
     --ion-text-color-rgb: 30, 45, 58;
   }
-
   ion-content {
-    --background: linear-gradient(160deg, #1B3A4B 0%, #2D6A7A 50%, #3A8595 100%);
+    --background: linear-gradient(135deg, #0A1929 0%, #112A46 50%, #153A62 100%);
   }
 }

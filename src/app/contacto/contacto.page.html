@@ -5,30 +5,20 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <!-- Grid responsivo: en móvil ocupa el 100%, en PC se centra y limita el ancho -->
+  <!-- Grid responsivo: 100% en móvil, centrado en PC -->
   <ion-grid fixed>
     <ion-row class="ion-justify-content-center">
       <ion-col size="12" size-md="8" size-lg="6">
 
-        <!-- ============================================================
-             HERO DE CONTACTO
-             Sección tipo "banner" con el nombre del profesional y su cargo.
-             Sirve como presentación antes de los canales de comunicación.
-             ============================================================ -->
+        <!-- Hero: nombre y cargo del profesional -->
         <div class="contact-hero">
           <h1 class="contact-name heading-royal text-gold">David Gonzalez</h1>
           <p class="contact-role">Ingeniero en Sistemas</p>
           <p class="contact-subtitle">Disponible para proyectos y colaboraciones</p>
         </div>
 
-        <!-- ============================================================
-             CANALES DE CONTACTO PROFESIONAL
-             Botones de acción directa hacia las redes y el correo.
-             Cada botón redirige al canal correspondiente con target="_blank"
-             para que se abra en una nueva pestaña sin cerrar la app.
-             ============================================================ -->
+        <!-- Botones de redes sociales y correo -->
         <div class="social-links-section">
-          <!-- LinkedIn: Agregamos https:// para que el navegador lo interprete como URL externa -->
           <a href="https://linkedin.com/in/david-gonzalez-827301a8" target="_blank" class="social-link-btn linkedin-btn">
             <ion-icon name="logo-linkedin"></ion-icon>
             <span>Conectar en LinkedIn</span>
@@ -37,25 +27,14 @@
             <ion-icon name="logo-github"></ion-icon>
             <span>Ver en GitHub</span>
           </a>
-          <!-- EMAIL: Usamos el protocolo "mailto:" para que el sistema operativo
-               detecte que es una dirección de correo y ofrezca abrirlo con:
-               - Gmail (en navegadores Chrome)
-               - Outlook (si está configurado como cliente predeterminado)
-               - Apple Mail (en iOS/macOS)
-               - Cualquier cliente de correo instalado
-               
-               Los parámetros "subject" y "body" pre-rellenan el asunto y cuerpo
-               del email para facilitar la comunicación al remitente. -->
+          <!-- mailto: abre el cliente de correo del usuario (Gmail, Outlook, etc.) -->
           <a href="mailto:gonzalezvillegasdavid@gmail.com?subject=Contacto%20desde%20Portafolio&body=Hola%20David%2C%20te%20contacto%20desde%20tu%20portafolio%20profesional." class="social-link-btn email-btn">
             <ion-icon name="mail-outline"></ion-icon>
             <span>Enviar Email</span>
           </a>
         </div>
 
-        <!-- ============================================================
-             INFORMACIÓN ADICIONAL (FOOTER)
-             Datos de ubicación y universidad como refuerzo de credibilidad.
-             ============================================================ -->
+        <!-- Footer con información adicional -->
         <div class="contact-footer">
           <div class="contact-info-row">
             <div class="contact-info-item">

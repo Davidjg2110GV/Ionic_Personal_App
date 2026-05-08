@@ -5,16 +5,13 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <!-- Implementación de Grid System de Ionic. 
-       El grid y las columnas permiten que el sistema detecte el tamaño de la pantalla.
-       En móviles se verá al 100% (size="12"), adaptándose a los gestos táctiles.
-       En PC, se restringe el ancho a size-md="10" size-lg="8" centrándolo en la pantalla. -->
+  <!-- Grid responsivo: size="12" en móvil, size-md/lg para centrar en PC -->
   <ion-grid fixed>
     <ion-row class="ion-justify-content-center">
       <ion-col size="12" size-md="10" size-lg="8">
         <div class="profile-page">
 
-    <!-- === TARJETA: Resumen Profesional === -->
+    <!-- Tarjeta: Resumen Profesional -->
     <div class="profile-card resumen-card">
       <div class="card-header-row">
         <ion-icon name="briefcase-outline" class="card-header-icon"></ion-icon>
@@ -24,26 +21,23 @@
         <div class="avatar-wrapper">
           <img [src]="misDatos.fotoUrl" alt="Foto de perfil" />
         </div>
-        <!-- Nombre con tipografía Royal y gradiente azul marino (text-navy-royal)
-             porque está sobre fondo BLANCO de la tarjeta -->
+        <!-- text-navy-royal se usa en fondos blancos para que sea legible -->
         <h1 class="profile-name heading-royal text-navy-royal">{{ misDatos.nombre }}</h1>
         <p class="profile-id">{{ misDatos.cedula }}</p>
         <p class="profile-bio">{{ resumenProfesional }}</p>
       </div>
     </div>
 
-    <!-- === Grid de 2 columnas para Educación y Experiencia === -->
-    <!-- En el CSS (informacion-personal.page.scss) uso media queries (@media min-width)
-         para que en móviles se vea 1 columna, y en computadoras se dividan en 2 columnas. -->
+    <!-- Grid de 2 columnas: Educación y Experiencia lado a lado en desktop -->
     <div class="two-col-grid">
 
-      <!-- TARJETA: Educación -->
+      <!-- Tarjeta: Educación -->
       <div class="profile-card">
         <div class="card-header-row">
           <ion-icon name="school-outline" class="card-header-icon"></ion-icon>
           <h2 class="heading-serif">Educación</h2>
         </div>
-        <!-- Itero sobre mi arreglo de educación para generar cada entrada dinámicamente -->
+        <!-- Iteración con *ngFor sobre el arreglo de educación -->
         <div class="entry" *ngFor="let edu of educacion">
           <h4 class="entry-title">{{ edu.titulo }}</h4>
           <p class="entry-detail"><strong>{{ edu.institucion }}</strong> ({{ edu.periodo }})</p>
@@ -51,13 +45,12 @@
         </div>
       </div>
 
-      <!-- TARJETA: Experiencia Profesional -->
+      <!-- Tarjeta: Experiencia Profesional -->
       <div class="profile-card">
         <div class="card-header-row">
           <ion-icon name="trending-up-outline" class="card-header-icon"></ion-icon>
           <h2 class="heading-serif">Experiencia</h2>
         </div>
-        <!-- Itero sobre la experiencia de la misma forma -->
         <div class="entry" *ngFor="let exp of experiencia">
           <h4 class="entry-title">{{ exp.cargo }}</h4>
           <p class="entry-detail"><strong>{{ exp.empresa }}</strong> ({{ exp.periodo }})</p>
@@ -67,14 +60,13 @@
 
     </div>
 
-    <!-- === TARJETA: Habilidades (chips) === -->
+    <!-- Tarjeta: Habilidades con chips de nombre + nivel -->
     <div class="profile-card habilidades-card">
       <div class="card-header-row">
         <ion-icon name="code-slash-outline" class="card-header-icon"></ion-icon>
         <h2 class="heading-serif">Habilidades</h2>
       </div>
       <div class="chips-container">
-        <!-- Renderizamos cada habilidad estructurada con su nivel -->
         <div class="skill-chip" *ngFor="let skill of habilidades">
           <span class="skill-name">{{ skill.nombre }}</span>
           <span class="skill-level">{{ skill.nivel }}</span>

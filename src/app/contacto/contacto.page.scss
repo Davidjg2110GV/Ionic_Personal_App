@@ -1,50 +1,27 @@
-// ============================================================
-// Estilos de la página de Contacto (Portafolio Profesional)
-// Diseño tipo portfolio serio: Hero con nombre, botones de redes
-// sociales, formulario con glassmorphism, y footer informativo.
-// Paleta: Deep Navy Blue (#0A1929) para armonía total con el proyecto.
-// ============================================================
+// Estilos de la página de Contacto
+// Diseño tipo portafolio: hero con nombre, botones sociales y footer.
 
-// --- Toolbar ---
-// Coincide con el color base de las demás páginas.
 ion-toolbar {
   --background: #0A1929;
   --color: #ffffff;
   --border-width: 0;
 }
 
-// --- Fondo del contenido ---
-// Gradiente azul marino profundo, compartido en toda la app.
 ion-content {
   --background: linear-gradient(135deg, #0A1929 0%, #112A46 50%, #153A62 100%);
 }
 
-// --- Contenedor principal ---
-.contact-page {
-  padding: 24px 16px 40px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-// ============================================================
-// HERO DE CONTACTO
-// Sección centrada con el nombre en tipografía Royal y el cargo.
-// El texto dorado champán (text-gold) se aplica desde la clase global.
-// ============================================================
+// Hero de contacto centrado
 .contact-hero {
   text-align: center;
   padding: 32px 16px 28px;
 }
 
 .contact-name {
-  font-size: 52px; // Grande para impacto visual con la fuente cursiva
+  font-size: 52px;
   line-height: 1.1;
   margin: 0 0 8px;
-
-  // En pantallas muy pequeñas reducimos para evitar desbordamiento
-  @media (max-width: 360px) {
-    font-size: 40px;
-  }
+  @media (max-width: 360px) { font-size: 40px; }
 }
 
 .contact-role {
@@ -52,7 +29,6 @@ ion-content {
   font-size: 15px;
   font-weight: 500;
   margin: 0 0 6px;
-  letter-spacing: 0.3px;
 }
 
 .contact-subtitle {
@@ -60,15 +36,9 @@ ion-content {
   font-size: 12.5px;
   font-weight: 300;
   margin: 0;
-  letter-spacing: 0.2px;
 }
 
-// ============================================================
-// BOTONES DE REDES SOCIALES
-// Diseño de botones tipo "pill" (pastilla), blancos y limpios,
-// con íconos de marca a la izquierda. Cada red tiene su color
-// de acento propio para que el usuario identifique rápidamente.
-// ============================================================
+// Botones de redes sociales tipo "pill"
 .social-links-section {
   display: flex;
   flex-direction: column;
@@ -76,8 +46,6 @@ ion-content {
   padding: 0 0 28px;
 }
 
-// Botón base: fondo blanco, bordes redondeados tipo cápsula,
-// sombra suave y transición para el hover.
 .social-link-btn {
   display: flex;
   align-items: center;
@@ -96,206 +64,31 @@ ion-content {
   border: 1px solid rgba(255, 255, 255, 0.8);
   box-shadow: 0 8px 24px rgba(10, 25, 41, 0.08);
   transition: all 0.25s ease;
+  ion-icon { font-size: 22px; }
 
-  ion-icon {
-    font-size: 22px;
-  }
-
-  // Hover solo en dispositivos con ratón (PC)
   @media (hover: hover) {
     &:hover {
       transform: translateY(-3px);
       box-shadow: 0 12px 32px rgba(10, 25, 41, 0.14);
     }
   }
-
-  // Feedback táctil en móvil
-  &:active {
-    transform: scale(0.97);
-  }
+  &:active { transform: scale(0.97); }
 }
 
-// Colores específicos para cada red social
-.linkedin-btn ion-icon {
-  color: #0A66C2; // Azul oficial de LinkedIn
-}
+// Colores de íconos según marca
+.linkedin-btn ion-icon { color: #0A66C2; }
+.github-btn ion-icon { color: #24292F; }
+.email-btn ion-icon { color: #153A62; }
 
-.github-btn ion-icon {
-  color: #24292F; // Negro oficial de GitHub
-}
-
-.email-btn ion-icon {
-  color: #153A62; // Azul marino del proyecto
-}
-
-// ============================================================
-// TARJETA DEL FORMULARIO (Glassmorphism)
-// Fondo semitransparente con desenfoque, sombras difusas y
-// bordes amplios para un acabado premium.
-// ============================================================
-.contact-card {
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-  padding: 32px 24px;
-  box-shadow: 0 12px 32px rgba(10, 25, 41, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  margin-bottom: 24px;
-}
-
-// Encabezado del formulario: centrado dentro de la tarjeta
-.form-header {
-  text-align: center;
-  margin-bottom: 24px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid #EDF2F5;
-
-  h3 {
-    font-size: 20px;
-    color: #0A1929;
-    margin: 0 0 6px;
-    font-weight: 600;
-  }
-
-  p {
-    font-size: 13px;
-    color: #5D6D7E;
-    margin: 0;
-    line-height: 1.5;
-  }
-}
-
-// ============================================================
-// CAMPOS DEL FORMULARIO
-// Cada campo tiene un ícono integrado a la izquierda (input-icon)
-// y un borde que se ilumina al enfocar (:focus-within).
-// ============================================================
-.form-group {
-  margin-bottom: 18px;
-
-  &:last-of-type {
-    margin-bottom: 24px;
-  }
-}
-
-.form-label {
-  display: block;
-  font-size: 12px;
-  font-weight: 600;
-  color: #0A1929;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  margin-bottom: 6px;
-}
-
-.input-wrapper {
-  display: flex;
-  align-items: center;
-  background: #F5F8FA;
-  border: 1.5px solid #E0E8ED;
-  border-radius: 12px;
-  padding: 0 14px;
-  transition: all 0.25s ease;
-
-  // Al enfocar un input, el borde se ilumina con el azul del proyecto
-  &:focus-within {
-    border-color: #0A1929;
-    background: #ffffff;
-    box-shadow: 0 0 0 3px rgba(10, 25, 41, 0.08);
-  }
-}
-
-.input-icon {
-  font-size: 18px;
-  color: #7A9AAE;
-  margin-right: 10px;
-  flex-shrink: 0;
-}
-
-.input-wrapper input,
-.input-wrapper textarea {
-  flex: 1;
-  border: none;
-  background: transparent;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  color: #1E2D3A;
-  padding: 13px 0;
-  outline: none;
-
-  &::placeholder {
-    color: #A8B8C4;
-  }
-}
-
-.textarea-wrapper {
-  align-items: flex-start;
-
-  .input-icon {
-    margin-top: 14px;
-  }
-
-  textarea {
-    resize: none;
-    line-height: 1.5;
-  }
-}
-
-// ============================================================
-// BOTÓN DE ENVÍO
-// Gradiente azul marino profundo acorde a la paleta del proyecto.
-// Antes era coral/rojo, ahora armoniza con el tema general.
-// ============================================================
-.send-button {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background: linear-gradient(135deg, #0A1929, #153A62);
-  color: #ffffff;
-  border: none;
-  border-radius: 12px;
-  padding: 15px 24px;
-  font-family: 'Inter', sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  box-shadow: 0 4px 16px rgba(10, 25, 41, 0.25);
-
-  ion-icon {
-    font-size: 18px;
-  }
-
-  @media (hover: hover) {
-    &:hover {
-      box-shadow: 0 8px 24px rgba(10, 25, 41, 0.35);
-      transform: translateY(-2px);
-    }
-  }
-
-  &:active {
-    transform: scale(0.97);
-    box-shadow: 0 2px 8px rgba(10, 25, 41, 0.4);
-  }
-}
-
-// ============================================================
-// FOOTER DE CONTACTO
-// Datos adicionales de ubicación y un texto de crédito.
-// ============================================================
-.contact-footer {
-  padding: 8px 0 0;
-}
+// Footer informativo
+.contact-footer { padding: 8px 0 0; }
 
 .contact-info-row {
   display: flex;
   justify-content: center;
   gap: 20px;
   padding: 8px 0;
-  flex-wrap: wrap; // Se adapta si la pantalla es muy angosta
+  flex-wrap: wrap;
 }
 
 .contact-info-item {
@@ -304,17 +97,12 @@ ion-content {
   gap: 6px;
   color: rgba(255, 255, 255, 0.55);
   font-size: 13px;
-
-  ion-icon {
-    font-size: 16px;
-  }
+  ion-icon { font-size: 16px; }
 }
 
-// Texto de crédito en la parte inferior
 .footer-text {
   text-align: center;
   color: rgba(255, 255, 255, 0.3);
   font-size: 11px;
   margin: 12px 0 0;
-  letter-spacing: 0.3px;
 }

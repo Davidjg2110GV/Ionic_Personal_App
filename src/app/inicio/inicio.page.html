@@ -6,15 +6,10 @@
 
 <ion-content [fullscreen]="true">
 
-  <!-- Removimos el ion-grid envolvente para que la sección Hero pueda ocupar
-       el 100% del ancho de la pantalla (edge-to-edge). El ancho del contenido
-       ya está restringido de forma elegante a 800px mediante CSS. -->
-
-
-        <!-- Hero / Bienvenida -->
-        <div class="hero-section">
+  <!-- Hero Section: Banner principal con saludo y nombre -->
+  <div class="hero-section">
     <div class="hero-content">
-      <p class="hero-greeting">{{ saludo }} 👋</p>
+      <p class="hero-greeting">{{ saludo }} </p>
       <h1 class="hero-name heading-royal text-gold">David Gonzalez</h1>
       <p class="hero-role">Ingeniero en Sistemas &bull; UNETI</p>
       <p class="hero-date">{{ fechaActual }}</p>
@@ -22,18 +17,21 @@
     <div class="hero-decoration"></div>
   </div>
 
-  <!-- Tarjetas de contenido -->
+  <!-- Tarjetas de contenido con efecto glassmorphism -->
   <div class="content-section">
 
-    <!-- Tarjeta de Bienvenida Principal -->
+    <!-- Tarjeta principal de bienvenida -->
     <div class="info-card welcome-card">
       <div class="large-icon-wrapper">
         <ion-icon name="rocket"></ion-icon>
       </div>
       <h3 class="heading-serif">Portafolio Profesional</h3>
-      <p>Presentación interactiva desarrollada para la evaluación práctica. Diseñada con estándares modernos de UI/UX utilizando <strong>Ionic Framework</strong> y <strong>Angular</strong> para garantizar un rendimiento óptimo.</p>
+      <p>Presentación interactiva desarrollada para la evaluación práctica. Diseñada con estándares modernos de UI/UX
+        utilizando <strong>Ionic Framework</strong> y <strong>Angular</strong> para garantizar un rendimiento óptimo.
+      </p>
     </div>
-    <!-- Fila de Estadísticas / Info (Actualizada con íconos) -->
+
+    <!-- Fila de estadísticas con íconos -->
     <div class="stats-row">
       <div class="stat-card">
         <ion-icon name="server" class="stat-icon"></ion-icon>
@@ -52,15 +50,16 @@
       </div>
     </div>
 
+    <!-- Tarjeta de navegación -->
     <div class="info-card">
       <div class="card-icon-wrapper secondary">
         <ion-icon name="compass-outline"></ion-icon>
       </div>
       <h3 class="heading-serif">Explora el Proyecto</h3>
-      <p>Accede a la sección de <strong>Perfil</strong> para conocer mi trayectoria técnica y académica, o dirígete a <strong>Contacto</strong> para establecer comunicación directa.</p>
+      <p>Accede a la sección de <strong>Perfil</strong> para conocer mi trayectoria técnica y académica, o dirígete a
+        <strong>Contacto</strong> para establecer comunicación directa.
+      </p>
     </div>
-    </div>
-
-
+  </div>
 
 </ion-content>

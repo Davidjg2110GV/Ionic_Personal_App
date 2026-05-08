@@ -9,9 +9,7 @@ import { ToastController } from '@ionic/angular';
 })
 export class ContactoPage implements OnInit {
 
-  // Declaro este modelo de datos bidireccional (ngModel) para el formulario.
-  // Lo estructuré así para poder capturar fácilmente lo que el usuario escribe en la interfaz
-  // y luego procesarlo en la función de envío.
+  // Modelo del formulario con binding bidireccional (ngModel)
   formularioContacto = {
     nombre: '',
     email: '',
@@ -19,43 +17,35 @@ export class ContactoPage implements OnInit {
     mensaje: ''
   };
 
-  // Inyecto ToastController para poder mostrar notificaciones en la pantalla.
-  // Considero que un buen diseño UX debe informar al usuario si su acción tuvo éxito.
+  // Inyección de ToastController para notificaciones visuales
   constructor(private toastController: ToastController) { }
 
   ngOnInit() {
   }
 
-  // Implementé este método asíncrono para manejar la acción del botón enviar.
-  // Decidí hacerlo asíncrono (async/await) porque el componente Toast de Ionic devuelve una promesa
-  // y de esta forma el código es mucho más legible que encadenando .then()
+  // Método asíncrono para validar y procesar el envío del formulario
   async enviarMensaje() {
-    // Lógica de validación: verifico que todos los campos del formulario estén completos
-    // antes de procesar el envío. Uso trim() para evitar que espacios en blanco cuenten.
     const { nombre, email, asunto, mensaje } = this.formularioContacto;
 
+    // Validación: todos los campos deben estar completos
     if (!nombre.trim() || !email.trim() || !asunto.trim() || !mensaje.trim()) {
       await this.mostrarNotificacion('Por favor completa todos los campos.', 'warning');
       return;
     }
 
-    // Validación básica de email usando una expresión regular simple.
-    // Verifico que contenga @ y un dominio para evitar envíos con datos inválidos.
+    // Validación de formato de email con expresión regular
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       await this.mostrarNotificacion('Por favor ingresa un email válido.', 'warning');
       return;
     }
 
-    // Si todo está correcto, simulo el envío y limpio el formulario
+    // Envío exitoso: notificación y reset del formulario
     await this.mostrarNotificacion('¡Mensaje enviado correctamente!', 'success');
-
-    // Reseteo mi modelo para dejar la interfaz limpia tras el envío exitoso
     this.formularioContacto = { nombre: '', email: '', asunto: '', mensaje: '' };
   }
 
-  // Creé un método auxiliar reutilizable para generar las alertas visuales.
-  // Esto me evita tener que reescribir la misma configuración del Toast varias veces.
+  // Método auxiliar para mostrar notificaciones Toast
   private async mostrarNotificacion(mensaje: string, color: string) {
     const toast = await this.toastController.create({
       message: mensaje,

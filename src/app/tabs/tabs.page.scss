@@ -1,13 +1,15 @@
+// Estilos de la barra de navegación inferior (Tab Bar)
+
 ion-tab-bar {
-  --background: #ffffff; // Fondo blanco limpio
+  --background: #ffffff;
   --border: none;
   padding: 4px 0 8px;
-  box-shadow: 0 -4px 20px rgba(10, 25, 41, 0.05); // Sombra azul oscura sutil
+  box-shadow: 0 -4px 20px rgba(10, 25, 41, 0.05);
 }
 
 ion-tab-button {
-  --color: #A8B8C4; // Gris azulado inactivo
-  --color-selected: #0A1929; // Azul profundo activo
+  --color: #A8B8C4;           // Color inactivo
+  --color-selected: #0A1929;  // Color activo (azul profundo)
   --padding-top: 6px;
   --padding-bottom: 2px;
   font-size: 11px;
