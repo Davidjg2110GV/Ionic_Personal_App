@@ -24,7 +24,9 @@
         <div class="avatar-wrapper">
           <img [src]="misDatos.fotoUrl" alt="Foto de perfil" />
         </div>
-        <h1 class="profile-name heading-royal text-gold">{{ misDatos.nombre }}</h1>
+        <!-- Nombre con tipografía Royal y gradiente azul marino (text-navy-royal)
+             porque está sobre fondo BLANCO de la tarjeta -->
+        <h1 class="profile-name heading-royal text-navy-royal">{{ misDatos.nombre }}</h1>
         <p class="profile-id">{{ misDatos.cedula }}</p>
         <p class="profile-bio">{{ resumenProfesional }}</p>
       </div>

@@ -50,16 +50,24 @@ ion-title.heading-royal {
 }
 
 // Efecto de texto "Champagne Gold" con alto contraste y elegancia
-// Utilizo tonos crema dorados más brillantes para que resalten sobre
-// el fondo azul marino oscuro (#0A1929) sin perder la exclusividad.
-// El gradiente va de dorado cálido a crema claro, creando un efecto
-// metálico suave que es perfectamente legible.
+// SOLO para fondos OSCUROS (navbars, hero sections con fondo azul marino).
+// Los tonos crema brillantes resaltan perfectamente contra #0A1929.
 .text-gold {
   background: linear-gradient(135deg, #E8D5B7, #FFF8EC, #D4B896, #F5E6D0, #C9A96E);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: brightness(1.1); // Refuerza la luminosidad para fondos oscuros
+  filter: brightness(1.1);
+}
+
+// Efecto elegante para fondos CLAROS (tarjetas blancas, cards).
+// Usa tonos azul marino profundo con un brillo metálico sutil.
+// Así la tipografía Royal se lee perfectamente sobre blanco.
+.text-navy-royal {
+  background: linear-gradient(135deg, #0A1929, #1A3A5C, #0D2137, #153A62);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 // Fuerzo el modo claro para que la paleta de colores se mantenga consistente
