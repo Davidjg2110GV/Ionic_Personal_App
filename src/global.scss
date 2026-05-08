@@ -49,13 +49,17 @@ ion-title.heading-royal {
   overflow: visible; // Permite que los trazos de la firma no se corten
 }
 
-// Efecto de texto dorado "Champagne Gold" para máxima elegancia
-// Un tono más suave y refinado que armoniza perfectamente con el Azul Marino profundo.
+// Efecto de texto "Champagne Gold" con alto contraste y elegancia
+// Utilizo tonos crema dorados más brillantes para que resalten sobre
+// el fondo azul marino oscuro (#0A1929) sin perder la exclusividad.
+// El gradiente va de dorado cálido a crema claro, creando un efecto
+// metálico suave que es perfectamente legible.
 .text-gold {
-  background: linear-gradient(to right, #C6A87C, #FFF3E0, #D1B48C, #A67C52);
+  background: linear-gradient(135deg, #E8D5B7, #FFF8EC, #D4B896, #F5E6D0, #C9A96E);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  filter: brightness(1.1); // Refuerza la luminosidad para fondos oscuros
 }
 
 // Fuerzo el modo claro para que la paleta de colores se mantenga consistente

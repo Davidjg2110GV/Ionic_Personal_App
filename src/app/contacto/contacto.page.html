@@ -28,7 +28,8 @@
              para que se abra en una nueva pestaña sin cerrar la app.
              ============================================================ -->
         <div class="social-links-section">
-          <a href="https://www.linkedin.com/in/david-gonzalez" target="_blank" class="social-link-btn linkedin-btn">
+          <!-- LinkedIn: Agregamos https:// para que el navegador lo interprete como URL externa -->
+          <a href="https://linkedin.com/in/david-gonzalez-827301a8" target="_blank" class="social-link-btn linkedin-btn">
             <ion-icon name="logo-linkedin"></ion-icon>
             <span>Conectar en LinkedIn</span>
           </a>
@@ -36,61 +37,19 @@
             <ion-icon name="logo-github"></ion-icon>
             <span>Ver en GitHub</span>
           </a>
-          <a href="mailto:davidjg2110gv@gmail.com" class="social-link-btn email-btn">
+          <!-- EMAIL: Usamos el protocolo "mailto:" para que el sistema operativo
+               detecte que es una dirección de correo y ofrezca abrirlo con:
+               - Gmail (en navegadores Chrome)
+               - Outlook (si está configurado como cliente predeterminado)
+               - Apple Mail (en iOS/macOS)
+               - Cualquier cliente de correo instalado
+               
+               Los parámetros "subject" y "body" pre-rellenan el asunto y cuerpo
+               del email para facilitar la comunicación al remitente. -->
+          <a href="mailto:gonzalezvillegasdavid@gmail.com?subject=Contacto%20desde%20Portafolio&body=Hola%20David%2C%20te%20contacto%20desde%20tu%20portafolio%20profesional." class="social-link-btn email-btn">
             <ion-icon name="mail-outline"></ion-icon>
             <span>Enviar Email</span>
           </a>
-        </div>
-
-        <!-- ============================================================
-             FORMULARIO DE CONTACTO
-             Tarjeta con glassmorphism para enviar mensajes directos.
-             Cada campo usa [(ngModel)] para binding bidireccional,
-             permitiendo capturar los datos desde el componente TypeScript.
-             ============================================================ -->
-        <div class="contact-card">
-          <div class="form-header">
-            <h3 class="heading-serif">Envíame un Mensaje</h3>
-            <p>Completa el formulario y me pondré en contacto contigo.</p>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Nombre</label>
-            <div class="input-wrapper">
-              <ion-icon name="person-outline" class="input-icon"></ion-icon>
-              <input type="text" placeholder="Tu nombre completo" [(ngModel)]="formularioContacto.nombre" />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Email</label>
-            <div class="input-wrapper">
-              <ion-icon name="mail-outline" class="input-icon"></ion-icon>
-              <input type="email" placeholder="correo@ejemplo.com" [(ngModel)]="formularioContacto.email" />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Asunto</label>
-            <div class="input-wrapper">
-              <ion-icon name="document-text-outline" class="input-icon"></ion-icon>
-              <input type="text" placeholder="Motivo de contacto" [(ngModel)]="formularioContacto.asunto" />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Mensaje</label>
-            <div class="input-wrapper textarea-wrapper">
-              <ion-icon name="create-outline" class="input-icon"></ion-icon>
-              <textarea placeholder="Escribe tu mensaje aquí..." [(ngModel)]="formularioContacto.mensaje" rows="5"></textarea>
-            </div>
-          </div>
-
-          <!-- Botón de envío con gradiente azul marino acorde al tema -->
-          <button class="send-button" (click)="enviarMensaje()">
-            <ion-icon name="send-outline"></ion-icon>
-            Enviar Mensaje
-          </button>
         </div>
 
         <!-- ============================================================
