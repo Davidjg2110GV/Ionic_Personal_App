@@ -30,14 +30,14 @@ export class InformacionPersonalPage implements OnInit {
   educacion = [
     {
       titulo: 'Ingeniería en Sistemas',
-      institucion: 'UNETI',
-      periodo: '2022 - Presente',
+      institucion: 'UNETI', //Universidad Nacional Experimental de las Telecomunicaciones e Informática
+      periodo: '2023 - Presente',
       nota: 'En curso'
     },
     {
       titulo: 'Bachiller en Ciencias',
-      institucion: 'Liceo',
-      periodo: '2017 - 2022',
+      institucion: 'U.E.N. Benito Canónico', //Unidad Educativa Nacional Benito Canónico
+      periodo: '2015 - 2020',
       nota: 'Graduado'
     }
   ];
@@ -47,31 +47,31 @@ export class InformacionPersonalPage implements OnInit {
   // para demostrar capacidad técnica.
   experiencia = [
     {
-      cargo: 'Desarrollador de Apps Móviles',
-      empresa: 'Proyecto Académico UNETI',
-      periodo: '2025 - Presente',
-      descripcion: 'Desarrollo de aplicaciones con Ionic y Angular.'
+      cargo: 'Técnico de hardware y soporte operativo',
+      empresa: 'Canguro Venezuela C.A.',
+      periodo: '2023 - 2024',
+      descripcion: 'Instalación de software, solución de fallas de hardware, mantenimiento preventivo y correctivo de equipos informáticos.'
     },
     {
-      cargo: 'Soporte Técnico',
-      empresa: 'Freelance',
-      periodo: '2023 - 2024',
-      descripcion: 'Mantenimiento de equipos y redes.'
+      cargo: 'Desarrollador Junior',
+      empresa: 'Canguro Venezuela C.A.',
+      periodo: '2025 - Presente',
+      descripcion: 'Desarrollo soluciones informaticas con Python, PostgreSQL y OpenERP(Odoo).'
     }
   ];
 
   // Las habilidades las definí como un arreglo simple de strings.
-  // En el template las renderizo como "chips" o etiquetas, 
-  // lo cual es una convención visual muy usada en perfiles profesionales.
-  habilidades: string[] = [
-    'Ionic & Angular',
-    'TypeScript',
-    'HTML / CSS',
-    'Python',
-    'Git & GitHub',
-    'Bases de Datos',
-    'Gestión de Proyectos',
-    'Soporte Técnico'
+  // En el template las renderizo como "chips" o etiquetas avanzadas, 
+  // agrupando el nombre de la tecnología y el nivel de dominio en un solo objeto.
+  habilidades = [
+    { nombre: 'Ionic & Angular', nivel: 'Junior' },
+    { nombre: 'TypeScript', nivel: 'Junior' },
+    { nombre: 'HTML / CSS', nivel: 'Junior' },
+    { nombre: 'Python', nivel: 'Junior' },
+    { nombre: 'Git & GitHub', nivel: 'Junior' },
+    { nombre: 'Bases de Datos', nivel: 'Junior' },
+    { nombre: 'Gestión de Proyectos', nivel: 'Junior' },
+    { nombre: 'Soporte Técnico', nivel: 'Junior' }
   ];
 
   constructor() { }

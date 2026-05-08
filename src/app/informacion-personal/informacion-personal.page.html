@@ -72,8 +72,11 @@
         <h2 class="heading-serif">Habilidades</h2>
       </div>
       <div class="chips-container">
-        <!-- Renderizo cada habilidad como un chip visual independiente -->
-        <span class="skill-chip" *ngFor="let skill of habilidades">{{ skill }}</span>
+        <!-- Renderizamos cada habilidad estructurada con su nivel -->
+        <div class="skill-chip" *ngFor="let skill of habilidades">
+          <span class="skill-name">{{ skill.nombre }}</span>
+          <span class="skill-level">{{ skill.nivel }}</span>
+        </div>
       </div>
     </div>
 

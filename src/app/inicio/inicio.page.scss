@@ -102,7 +102,7 @@ ion-content {
   backdrop-filter: blur(12px);
   border-radius: 20px;
   padding: 28px 24px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   box-shadow: 0 12px 32px rgba(27, 58, 75, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.8);
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
@@ -153,13 +153,13 @@ ion-content {
 }
 
 // --- Stats Row ---
-// Creé una fila de mini-estadísticas para mostrar datos rápidos de la app.
-// El diseño de 3 columnas iguales da equilibrio visual.
+// Aumenté el gap y el margin-bottom a 24px para que coincida con el estándar
+// de separación visual (blancos espaciales) de las tarjetas principales.
 .stats-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-bottom: 16px;
+  gap: 24px;
+  margin-bottom: 24px;
 }
 
 .stat-card {
