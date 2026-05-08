@@ -1,13 +1,13 @@
 ion-tab-bar {
-  --background: #1B2F3A;
+  --background: #ffffff; // Fondo blanco limpio
   --border: none;
   padding: 4px 0 8px;
-  box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 -4px 20px rgba(10, 25, 41, 0.05); // Sombra azul oscura sutil
 }
 
 ion-tab-button {
-  --color: #7A9AAE;
-  --color-selected: #E05A47;
+  --color: #A8B8C4; // Gris azulado inactivo
+  --color-selected: #0A1929; // Azul profundo activo
   --padding-top: 6px;
   --padding-bottom: 2px;
   font-size: 11px;

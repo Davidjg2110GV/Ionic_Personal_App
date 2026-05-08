@@ -62,10 +62,10 @@ ion-content {
 
 .hero-name {
   color: #ffffff;
-  font-size: 28px;
-  font-weight: 700;
+  font-size: 48px; // Aumentado significativamente para destacar la fuente script 'Royal'
+  font-weight: 400;
   margin: 0 0 4px;
-  letter-spacing: -0.5px;
+  line-height: 1.2;
 }
 
 .hero-role {

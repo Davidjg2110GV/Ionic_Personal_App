@@ -3,13 +3,13 @@
 // sobre un fondo con gradiente teal, emulando el diseño de perfil profesional.
 
 ion-toolbar {
-  --background: #2C4F5F;
+  --background: #0A1929;
   --color: #ffffff;
   --border-width: 0;
 }
 
 ion-content {
-  --background: linear-gradient(160deg, #1B3A4B 0%, #2D6A7A 50%, #3A8595 100%);
+  --background: linear-gradient(135deg, #0A1929 0%, #112A46 50%, #153A62 100%);
 }
 
 // --- Container principal ---
@@ -32,7 +32,7 @@ ion-content {
   border-radius: 20px;
   padding: 28px 24px;
   margin-bottom: 24px;
-  box-shadow: 0 12px 32px rgba(27, 58, 75, 0.08);
+  box-shadow: 0 12px 32px rgba(10, 25, 41, 0.08); // Sombra en tono azul profundo
   border: 1px solid rgba(255, 255, 255, 0.8);
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
 
@@ -40,7 +40,7 @@ ion-content {
   @media (hover: hover) {
     &:hover {
       transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(27, 58, 75, 0.12);
+      box-shadow: 0 16px 40px rgba(10, 25, 41, 0.12);
     }
   }
 
@@ -62,7 +62,7 @@ ion-content {
 
 .card-header-icon {
   font-size: 22px;
-  color: #2C4F5F;
+  color: #0A1929;
   flex-shrink: 0;
 }
 
@@ -86,7 +86,7 @@ ion-content {
   margin: 0 auto 14px;
   overflow: hidden;
   border: 3px solid #EDF2F5;
-  box-shadow: 0 4px 16px rgba(44, 79, 95, 0.15);
+  box-shadow: 0 4px 16px rgba(10, 25, 41, 0.15);
 
   img {
     width: 100%;
@@ -96,11 +96,9 @@ ion-content {
 }
 
 .profile-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  font-weight: 700;
-  color: #1E2D3A;
+  font-size: 42px; // Aumentado para la fuente cursive 'Royal'
   margin: 0 0 4px;
+  line-height: 1.2;
 }
 
 .profile-id {
@@ -168,8 +166,8 @@ ion-content {
 
 .entry-badge {
   display: inline-block;
-  background: #EAF4F7;
-  color: #2C4F5F;
+  background: #EAF0F6;
+  color: #0A1929;
   font-size: 11px;
   font-weight: 600;
   padding: 3px 10px;
@@ -208,7 +206,7 @@ ion-content {
   transition: all 0.25s ease;
 
   .skill-level {
-    background: linear-gradient(135deg, #2C4F5F, #3A8595);
+    background: linear-gradient(135deg, #0A1929, #153A62);
     color: #ffffff;
     font-size: 10px;
     font-weight: 700;
@@ -216,7 +214,7 @@ ion-content {
     padding: 4px 10px;
     border-radius: 20px;
     letter-spacing: 0.5px;
-    box-shadow: 0 2px 6px rgba(44, 79, 95, 0.2);
+    box-shadow: 0 2px 6px rgba(10, 25, 41, 0.2);
   }
 
   @media (hover: hover) {

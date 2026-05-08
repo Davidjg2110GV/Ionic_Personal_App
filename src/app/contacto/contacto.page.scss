@@ -3,13 +3,13 @@
 // para dar coherencia visual con el resto de la aplicación.
 
 ion-toolbar {
-  --background: #2C4F5F;
+  --background: #0A1929;
   --color: #ffffff;
   --border-width: 0;
 }
 
 ion-content {
-  --background: linear-gradient(160deg, #1B3A4B 0%, #2D6A7A 50%, #3A8595 100%);
+  --background: linear-gradient(135deg, #0A1929 0%, #112A46 50%, #153A62 100%);
 }
 
 .contact-page {
@@ -64,7 +64,7 @@ ion-content {
   backdrop-filter: blur(12px);
   border-radius: 20px;
   padding: 32px 24px;
-  box-shadow: 0 12px 32px rgba(27, 58, 75, 0.08);
+  box-shadow: 0 12px 32px rgba(10, 25, 41, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.8);
   margin-bottom: 24px;
 }
@@ -84,7 +84,7 @@ ion-content {
   display: block;
   font-size: 12px;
   font-weight: 600;
-  color: #2C4F5F;
+  color: #0A1929;
   text-transform: uppercase;
   letter-spacing: 0.6px;
   margin-bottom: 6px;
@@ -100,9 +100,9 @@ ion-content {
   transition: all 0.25s ease;
 
   &:focus-within {
-    border-color: #2C4F5F;
+    border-color: #0A1929;
     background: #ffffff;
-    box-shadow: 0 0 0 3px rgba(44, 79, 95, 0.08);
+    box-shadow: 0 0 0 3px rgba(10, 25, 41, 0.08);
   }
 }
 

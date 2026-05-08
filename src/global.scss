@@ -30,10 +30,32 @@
 }
 
 // Clase utilitaria para los títulos elegantes con la tipografía serif.
-// La aplico en las cabeceras de las tarjetas para darles ese toque editorial
-// que se ve en el sketch de referencia.
+// La aplico en las cabeceras de las tarjetas para darles ese toque editorial.
 .heading-serif {
   font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+}
+
+// Clase utilitaria para títulos ultra-elegantes tipo firma (Royal Script)
+// Ideal para nombres propios o destacables.
+.heading-royal {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+// Aumentamos el tamaño si se usa en el Navbar
+ion-title.heading-royal {
+  font-size: 28px !important;
+  overflow: visible; // Permite que los trazos de la firma no se corten
+}
+
+// Efecto de texto dorado "Champagne Gold" para máxima elegancia
+// Un tono más suave y refinado que armoniza perfectamente con el Azul Marino profundo.
+.text-gold {
+  background: linear-gradient(to right, #C6A87C, #FFF3E0, #D1B48C, #A67C52);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 // Fuerzo el modo claro para que la paleta de colores se mantenga consistente
