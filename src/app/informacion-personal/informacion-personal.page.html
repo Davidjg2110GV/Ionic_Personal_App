@@ -5,7 +5,14 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="profile-page">
+  <!-- Implementación de Grid System de Ionic. 
+       El grid y las columnas permiten que el sistema detecte el tamaño de la pantalla.
+       En móviles se verá al 100% (size="12"), adaptándose a los gestos táctiles.
+       En PC, se restringe el ancho a size-md="10" size-lg="8" centrándolo en la pantalla. -->
+  <ion-grid fixed>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-md="10" size-lg="8">
+        <div class="profile-page">
 
     <!-- === TARJETA: Resumen Profesional === -->
     <div class="profile-card resumen-card">
@@ -24,6 +31,8 @@
     </div>
 
     <!-- === Grid de 2 columnas para Educación y Experiencia === -->
+    <!-- En el CSS (informacion-personal.page.scss) uso media queries (@media min-width)
+         para que en móviles se vea 1 columna, y en computadoras se dividan en 2 columnas. -->
     <div class="two-col-grid">
 
       <!-- TARJETA: Educación -->
@@ -68,5 +77,8 @@
       </div>
     </div>
 
-  </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

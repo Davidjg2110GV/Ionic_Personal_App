@@ -5,7 +5,14 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="contact-page">
+  <!-- El componente ion-grid nos ayuda con la configuración responsiva.
+       Si se entra desde una PC, las columnas (ion-col) toman un ancho máximo (size-md/lg), 
+       y si se entra desde un móvil o tablet pequeña (iOS o Android), el ancho será 100% (size="12"), 
+       respetando los márgenes del dispositivo y el control táctil. -->
+  <ion-grid fixed>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-md="8" size-lg="6">
+        <div class="contact-page">
 
     <!-- Encabezado de la sección -->
     <div class="contact-header">
@@ -71,5 +78,8 @@
       </div>
     </div>
 
-  </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

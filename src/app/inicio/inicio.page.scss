@@ -47,6 +47,8 @@ ion-content {
 .hero-content {
   position: relative;
   z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .hero-greeting {
@@ -80,27 +82,40 @@ ion-content {
 }
 
 // --- Content Section ---
+// Restringimos el ancho máximo en pantallas grandes para que el contenido
+// se mantenga centrado, proporcionado y elegante, sin estirarse en monitores ultrawide.
 .content-section {
-  padding: 20px 16px 30px;
-  margin-top: -20px;
+  padding: 24px 16px 40px;
+  margin-top: -30px;
   position: relative;
   z-index: 2;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-// --- Info Cards ---
-// Diseñé las tarjetas con bordes redondeados amplios y sombras difuminadas 
-// para lograr el efecto de "elevación" que se aprecia en el sketch.
+// --- Info Cards (Premium UI) ---
+// Empleamos Glassmorphism: fondo translúcido, bordes de 20px, y desenfoque.
+// Esto diferencia un sistema básico de uno moderno y de "alto nivel".
 .info-card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 24px 20px;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 16px rgba(27, 58, 75, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 28px 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 12px 32px rgba(27, 58, 75, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(27, 58, 75, 0.12);
+    }
+  }
 
   &:active {
     transform: scale(0.98);
-    box-shadow: 0 1px 8px rgba(27, 58, 75, 0.12);
   }
 
   h3 {
@@ -148,11 +163,13 @@ ion-content {
 }
 
 .stat-card {
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 18px 12px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 20px 12px;
   text-align: center;
-  box-shadow: 0 2px 12px rgba(27, 58, 75, 0.07);
+  box-shadow: 0 8px 24px rgba(27, 58, 75, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.6);
 
   .stat-number {
     font-family: 'Playfair Display', serif;

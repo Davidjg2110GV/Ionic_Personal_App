@@ -13,8 +13,9 @@ ion-content {
 }
 
 .contact-page {
-  padding: 16px;
-  padding-bottom: 32px;
+  padding: 24px 16px 40px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 // --- Encabezado del formulario ---
@@ -56,13 +57,16 @@ ion-content {
   margin: 0 auto;
 }
 
-// --- Tarjeta del formulario ---
+// --- Tarjeta del formulario (Premium UI) ---
+// Aplicamos Glassmorphism para evitar el diseño "genérico" plano.
 .contact-card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 24px 20px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
-  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 32px 24px;
+  box-shadow: 0 12px 32px rgba(27, 58, 75, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  margin-bottom: 24px;
 }
 
 // --- Grupos de formulario ---

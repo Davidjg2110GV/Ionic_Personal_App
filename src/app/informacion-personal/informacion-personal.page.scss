@@ -13,21 +13,36 @@ ion-content {
 }
 
 // --- Container principal ---
+// Añadimos un max-width y margin: 0 auto. Esto es CRUCIAL para evitar 
+// que en un monitor de PC el diseño se estire a lo ancho de forma genérica.
+// Así mantenemos proporciones legibles y elegantes (tipo tarjeta central).
 .profile-page {
-  padding: 16px;
-  padding-bottom: 32px;
+  padding: 24px 16px 40px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-// --- Tarjeta base ---
-// Utilizo bordes redondeados amplios (16px) y sombras difuminadas para lograr
-// el efecto de tarjetas "flotantes" que se ven en el sketch de referencia.
+// --- Tarjeta base (Premium UI) ---
+// Utilizo bordes más amplios (20px), fondo con transparencia sutil, filtro de desenfoque (backdrop-filter)
+// y sombras expansivas suaves. Esto le quita el aspecto "aburrido" y plano, y le da un acabado 
+// "Glassmorphism" (cristalizado), muy utilizado en el diseño UI de alto nivel actual.
 .profile-card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 22px 20px;
-  margin-bottom: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 28px 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 12px 32px rgba(27, 58, 75, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+
+  // Interacción al pasar el mouse (solo en PC) para dar dinamismo
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(27, 58, 75, 0.12);
+    }
+  }
 
   &:active {
     transform: scale(0.98);
@@ -104,13 +119,13 @@ ion-content {
 }
 
 // --- Grid de 2 columnas ---
-// Implementé CSS Grid para que en pantallas anchas (tablets) las tarjetas
-// de Educación y Experiencia se muestren lado a lado, como en el sketch.
-// En teléfonos se apilan verticalmente para mejor legibilidad.
+// Implementé CSS Grid para que en pantallas anchas (tablets y PC) las tarjetas
+// de Educación y Experiencia se muestren lado a lado.
+// Modifiqué el gap a 24px para que "respiren" mejor visualmente.
 .two-col-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
+  gap: 24px;
   margin-bottom: 0;
 
   .profile-card {

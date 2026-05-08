@@ -6,8 +6,16 @@
 
 <ion-content [fullscreen]="true">
 
-  <!-- Hero / Bienvenida -->
-  <div class="hero-section">
+  <!-- Utilizamos ion-grid con el atributo 'fixed' para lograr un diseño responsivo.
+       En dispositivos móviles (Android/iOS) ocupará todo el ancho disponible, permitiendo
+       navegación táctil fluida. En computadora (PC), el grid centrará el contenido 
+       y limitará su ancho (size-md="10" size-lg="8") para que la vista no se deforme o estire. -->
+  <ion-grid fixed>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-md="10" size-lg="8">
+
+        <!-- Hero / Bienvenida -->
+        <div class="hero-section">
     <div class="hero-content">
       <p class="hero-greeting">{{ saludo }} 👋</p>
       <h1 class="hero-name heading-serif">David Gonzalez</h1>
@@ -51,6 +59,8 @@
       <p>Utiliza la barra inferior para explorar las diferentes secciones: <strong>Perfil</strong> para ver mi información académica y <strong>Contacto</strong> para enviar un mensaje.</p>
     </div>
 
-  </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
