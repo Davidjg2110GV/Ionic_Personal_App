@@ -3,7 +3,7 @@
 // seguido de tarjetas blancas con sombras suaves que flotan sobre un fondo claro.
 
 ion-toolbar {
-  --background: #2C4F5F;
+  --background: #0A1929;
   --color: #ffffff;
   --border-width: 0;
 }
@@ -16,10 +16,11 @@ ion-content {
 // Implementé una sección hero con gradiente y una decoración circular decorativa 
 // para darle un aspecto moderno y premium a la pantalla principal.
 .hero-section {
-  background: linear-gradient(160deg, #1B3A4B 0%, #2D6A7A 50%, #3A8595 100%);
-  padding: 40px 24px 50px;
+  background: linear-gradient(135deg, #0A1929 0%, #112A46 50%, #153A62 100%);
+  padding: 50px 24px 80px; // Aumentado para dar un aspecto de "Banner" más imponente
   position: relative;
   overflow: hidden;
+  margin-top: -1px; // Evita pequeñas líneas blancas con el toolbar
 }
 
 .hero-decoration {
@@ -49,6 +50,7 @@ ion-content {
   z-index: 1;
   max-width: 800px;
   margin: 0 auto;
+  text-align: center; // Centramos el texto según el nuevo diseño premium
 }
 
 .hero-greeting {
@@ -85,8 +87,8 @@ ion-content {
 // Restringimos el ancho máximo en pantallas grandes para que el contenido
 // se mantenga centrado, proporcionado y elegante, sin estirarse en monitores ultrawide.
 .content-section {
-  padding: 24px 16px 40px;
-  margin-top: -30px;
+  padding: 0 16px 40px;
+  margin-top: -40px; // Aumentamos el solapamiento negativo para que la tarjeta pise más el Hero
   position: relative;
   z-index: 2;
   max-width: 800px;
@@ -118,6 +120,13 @@ ion-content {
     transform: scale(0.98);
   }
 
+  &.welcome-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   h3 {
     font-size: 18px;
     color: #1E2D3A;
@@ -131,6 +140,15 @@ ion-content {
     line-height: 1.6;
     margin: 0;
   }
+}
+
+.large-icon-wrapper {
+  font-size: 56px;
+  color: #0A1929; // Azul profundo acorde al tema
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-icon-wrapper {
@@ -163,25 +181,48 @@ ion-content {
 }
 
 .stat-card {
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(10px);
   border-radius: 16px;
-  padding: 20px 12px;
+  padding: 20px 10px;
   text-align: center;
-  box-shadow: 0 8px 24px rgba(27, 58, 75, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 24px rgba(10, 25, 41, 0.08); // Sombra adaptada al azul oscuro
+  border: 1px solid rgba(255, 255, 255, 0.9);
+
+  .stat-icon {
+    font-size: 38px;
+    color: #0A1929;
+    margin-bottom: 8px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ts-icon {
+    width: 32px;
+    height: 32px;
+    background: #0A1929;
+    color: #ffffff;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+  }
 
   .stat-number {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
+    font-family: 'Inter', sans-serif; // Cambiamos a sans-serif para las estadísticas según la imagen
+    font-size: 24px;
     font-weight: 700;
-    color: #2C4F5F;
+    color: #0A1929;
     margin-bottom: 4px;
   }
 
   .stat-label {
-    font-size: 11px;
-    color: #7A9AAE;
+    font-size: 10.5px;
+    color: #5D6D7E;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.5px;
