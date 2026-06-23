@@ -14,7 +14,7 @@ export class InformacionPersonalPage implements OnInit {
     cedula: 'V-30.085.011',
     carrera: 'Ingeniería en Sistemas',
     universidad: 'Universidad Nacional Experimental de las Telecomunicaciones e Informática (UNETI)',
-    fotoUrl: 'https://i.ibb.co/ZzphLGyc/IMG-20251204-070842-288.jpg'
+    fotoUrl: 'assets/profile.jpg'
   };
 
   // Resumen profesional como string independiente
