@@ -10,63 +10,110 @@
       <ion-col size="12" size-md="10" size-lg="8">
         <div class="profile-page">
 
-    <!-- Card: Professional Summary -->
-    <div class="glass-card resumen-card animate-fade-in-up">
-      <div class="card-header-row">
-        <ion-icon name="briefcase-outline" class="card-header-icon"></ion-icon>
-        <h2 class="heading-serif card-header-title">Resumen Profesional</h2>
-      </div>
-      <div class="resumen-content">
-        <div class="avatar-wrapper">
-          <img [src]="misDatos.fotoUrl" alt="Foto de perfil" />
+    <!-- ========== PROFESSIONAL SUMMARY ========== -->
+    <div class="profile-hero-card animate-fade-in-up">
+      <!-- Decorative glow -->
+      <div class="profile-hero-glow"></div>
+      
+      <div class="profile-hero-content">
+        <div class="avatar-ring">
+          <div class="avatar-wrapper">
+            <img [src]="misDatos.fotoUrl" alt="Foto de perfil" />
+          </div>
         </div>
+        
         <h1 class="profile-name font-script text-gold">{{ misDatos.nombre }}</h1>
-        <p class="profile-id">{{ misDatos.cedula }}</p>
+        <p class="profile-id">
+          <ion-icon name="id-card-outline" style="font-size: 14px; margin-right: 4px; vertical-align: middle;"></ion-icon>
+          {{ misDatos.cedula }}
+        </p>
+        
+        <div class="profile-divider">
+          <div class="divider-line"></div>
+          <ion-icon name="diamond-outline" class="divider-icon"></ion-icon>
+          <div class="divider-line"></div>
+        </div>
+
         <p class="profile-bio">{{ resumenProfesional }}</p>
       </div>
     </div>
 
-    <!-- Two-column grid: Education and Experience -->
+    <!-- ========== EDUCATION & EXPERIENCE GRID ========== -->
     <div class="two-col-grid">
 
-      <!-- Card: Education -->
-      <div class="glass-card animate-fade-in-up delay-100">
-        <div class="card-header-row">
-          <ion-icon name="school-outline" class="card-header-icon"></ion-icon>
-          <h2 class="heading-serif card-header-title">Educación</h2>
+      <!-- Education Card -->
+      <div class="detail-card animate-fade-in-up delay-100">
+        <div class="detail-card-header">
+          <div class="detail-icon-circle">
+            <ion-icon name="school-outline"></ion-icon>
+          </div>
+          <div>
+            <h2 class="detail-card-title heading-serif">Educación</h2>
+            <p class="detail-card-subtitle">Formación académica</p>
+          </div>
         </div>
-        <div class="entry" *ngFor="let edu of educacion">
-          <h4 class="entry-title">{{ edu.titulo }}</h4>
-          <p class="entry-detail"><strong>{{ edu.institucion }}</strong> ({{ edu.periodo }})</p>
-          <span class="entry-badge">{{ edu.nota }}</span>
+        
+        <div class="detail-card-body">
+          <div class="timeline-entry" *ngFor="let edu of educacion; let last = last" [class.last-entry]="last">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4 class="entry-title">{{ edu.titulo }}</h4>
+              <p class="entry-institution">{{ edu.institucion }}</p>
+              <p class="entry-period">{{ edu.periodo }}</p>
+              <span class="entry-badge">{{ edu.nota }}</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Card: Experience -->
-      <div class="glass-card animate-fade-in-up delay-200">
-        <div class="card-header-row">
-          <ion-icon name="trending-up-outline" class="card-header-icon"></ion-icon>
-          <h2 class="heading-serif card-header-title">Experiencia</h2>
+      <!-- Experience Card -->
+      <div class="detail-card animate-fade-in-up delay-200">
+        <div class="detail-card-header">
+          <div class="detail-icon-circle secondary">
+            <ion-icon name="rocket-outline"></ion-icon>
+          </div>
+          <div>
+            <h2 class="detail-card-title heading-serif">Experiencia</h2>
+            <p class="detail-card-subtitle">Trayectoria profesional</p>
+          </div>
         </div>
-        <div class="entry" *ngFor="let exp of experiencia">
-          <h4 class="entry-title">{{ exp.cargo }}</h4>
-          <p class="entry-detail"><strong>{{ exp.empresa }}</strong> ({{ exp.periodo }})</p>
-          <p class="entry-desc">{{ exp.descripcion }}</p>
+        
+        <div class="detail-card-body">
+          <div class="timeline-entry" *ngFor="let exp of experiencia; let last = last" [class.last-entry]="last">
+            <div class="timeline-dot secondary"></div>
+            <div class="timeline-content">
+              <h4 class="entry-title">{{ exp.cargo }}</h4>
+              <p class="entry-institution">{{ exp.empresa }}</p>
+              <p class="entry-period">{{ exp.periodo }}</p>
+              <p class="entry-desc">{{ exp.descripcion }}</p>
+            </div>
+          </div>
         </div>
       </div>
 
     </div>
 
-    <!-- Card: Skills with chips -->
-    <div class="glass-card habilidades-card animate-fade-in-up delay-300">
-      <div class="card-header-row">
-        <ion-icon name="code-slash-outline" class="card-header-icon"></ion-icon>
-        <h2 class="heading-serif card-header-title">Habilidades</h2>
+    <!-- ========== SKILLS SECTION ========== -->
+    <div class="skills-card animate-fade-in-up delay-300">
+      <div class="skills-header">
+        <div class="detail-icon-circle accent">
+          <ion-icon name="code-slash-outline"></ion-icon>
+        </div>
+        <div>
+          <h2 class="detail-card-title heading-serif">Habilidades Técnicas</h2>
+          <p class="detail-card-subtitle">Stack tecnológico</p>
+        </div>
       </div>
-      <div class="chips-container">
-        <div class="skill-chip" *ngFor="let skill of habilidades">
-          <span class="skill-name">{{ skill.nombre }}</span>
-          <span class="skill-level">{{ skill.nivel }}</span>
+
+      <div class="skills-grid">
+        <div class="skill-item" *ngFor="let skill of habilidades">
+          <div class="skill-bar-bg">
+            <div class="skill-bar-fill"></div>
+          </div>
+          <div class="skill-info">
+            <span class="skill-name">{{ skill.nombre }}</span>
+            <span class="skill-level-badge">{{ skill.nivel }}</span>
+          </div>
         </div>
       </div>
     </div>

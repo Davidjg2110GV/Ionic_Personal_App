@@ -1,5 +1,5 @@
 // ==========================================================
-// Inicio Page – Aurelian Tech Glassmorphism
+// Inicio Page – Aurelian Tech Premium
 // ==========================================================
 
 // Aurora ambient background
@@ -38,35 +38,53 @@
   animation-delay: 5s;
 }
 
-// Hero section
+// ===========================
+// HERO SECTION
+// ===========================
 .hero-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 65vh;
-  padding: 40px 24px 32px;
+  min-height: 75vh;
+  padding: 48px 24px 40px;
   position: relative;
   z-index: 1;
 }
 
 .hero-content {
   text-align: center;
-  max-width: 720px;
+  max-width: 780px;
   margin: 0 auto;
 }
 
+// Gold decorative accent line above name
+.hero-accent-line {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #e9c349, transparent);
+  margin: 0 auto 20px;
+  border-radius: 2px;
+}
+
+// Name – LARGE, no clipping, generous padding
 .hero-name {
-  font-size: 48px;
-  line-height: 1.1;
-  margin: 0 0 12px;
+  font-size: 56px;
+  line-height: 1.3;
+  margin: 0 0 16px;
+  padding: 8px 16px;
   cursor: default;
   transition: transform 0.5s ease;
+  letter-spacing: 2px;
 
   &:hover { transform: scale(1.03); }
 
+  @media (min-width: 480px) {
+    font-size: 68px;
+  }
   @media (min-width: 768px) {
-    font-size: 64px;
+    font-size: 80px;
+    padding: 12px 24px;
   }
 }
 
@@ -74,52 +92,129 @@
   font-family: 'Inter', sans-serif;
   font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: #bec6e0;
-  margin: 0 0 24px;
+  margin: 0 0 20px;
 
   @media (min-width: 768px) {
     font-size: 15px;
+    letter-spacing: 0.3em;
   }
 }
 
 .hero-description {
   font-family: 'Inter', sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 300;
-  line-height: 1.65;
+  line-height: 1.7;
   color: #c6c6cd;
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 580px;
+  margin: 0 auto 28px;
+
+  @media (min-width: 768px) {
+    font-size: 17px;
+  }
 }
 
-// Scroll indicator
-.scroll-indicator {
+// Floating tech badges
+.hero-tech-badges {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.tech-badge {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #e9c349;
+  background: rgba(233, 195, 73, 0.08);
+  border: 1px solid rgba(233, 195, 73, 0.15);
+  padding: 5px 14px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(233, 195, 73, 0.15);
+    border-color: rgba(233, 195, 73, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(233, 195, 73, 0.1);
+  }
+}
+
+// ===========================
+// SCROLL INDICATOR – animated
+// ===========================
+.scroll-indicator-container {
   position: absolute;
-  bottom: 16px;
+  bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+}
+
+// Pulsing ring animation
+@keyframes pulseRing {
+  0% { transform: scale(0.8); opacity: 0.6; }
+  50% { transform: scale(1.3); opacity: 0; }
+  100% { transform: scale(0.8); opacity: 0; }
+}
+
+.scroll-pulse-ring {
+  position: absolute;
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  border: 1px solid rgba(233, 195, 73, 0.3);
+  animation: pulseRing 2.5s ease-out infinite;
+}
+
+.scroll-inner {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  opacity: 0.6;
+  gap: 2px;
 }
 
 .scroll-label {
-  font-size: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: #c6c6cd;
-  margin-bottom: 4px;
+  font-weight: 500;
 }
 
-.scroll-icon {
-  font-size: 18px;
+// Bouncing arrow inside track
+@keyframes scrollArrowBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.7; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+
+.scroll-arrow-track {
+  height: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+
+.scroll-arrow {
+  font-size: 16px;
   color: #e9c349;
+  animation: scrollArrowBounce 1.8s ease-in-out infinite;
 }
 
-// Expertise section
+// ===========================
+// EXPERTISE SECTION
+// ===========================
 .expertise-section {
   padding: 0 16px 80px;
   max-width: 960px;
@@ -141,8 +236,22 @@
   margin-bottom: 32px;
 }
 
+.section-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+// Vertical gold accent bar
+.section-accent-bar {
+  width: 3px;
+  height: 28px;
+  background: linear-gradient(180deg, #e9c349, rgba(233, 195, 73, 0.2));
+  border-radius: 2px;
+}
+
 .section-title {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 600;
   color: #bec6e0;
   margin: 0;
