@@ -1,22 +1,39 @@
-// Estilos de la barra de navegación inferior (Tab Bar)
+// ==========================================================
+// Tab Bar – Aurelian Tech Glassmorphism
+// ==========================================================
 
 ion-tab-bar {
-  --background: #ffffff;
+  --background: rgba(13, 28, 45, 0.85);
   --border: none;
   padding: 4px 0 8px;
-  box-shadow: 0 -4px 20px rgba(10, 25, 41, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(190, 198, 224, 0.08);
+  box-shadow: none;
 }
 
 ion-tab-button {
-  --color: #A8B8C4;           // Color inactivo
-  --color-selected: #0A1929;  // Color activo (azul profundo)
+  --color: #909097;          // Inactive: muted outline color
+  --color-selected: #e9c349; // Active: Aurelian Gold
   --padding-top: 6px;
   --padding-bottom: 2px;
-  font-size: 11px;
-  letter-spacing: 0.3px;
+  --background: transparent;
+  --background-focused: transparent;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: color 0.2s ease;
 
   ion-icon {
     font-size: 22px;
     margin-bottom: 2px;
+    transition: transform 0.2s ease;
+  }
+
+  &.tab-selected ion-icon,
+  &:hover ion-icon {
+    transform: translateY(-1px);
   }
 }

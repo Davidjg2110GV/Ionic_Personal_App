@@ -1,232 +1,299 @@
-// Estilos de la página de Inicio
-// Se aplica un diseño tipo "Hero Banner" con gradiente azul marino,
-// seguido de tarjetas blancas con efecto glassmorphism.
+// ==========================================================
+// Inicio Page – Aurelian Tech Glassmorphism
+// ==========================================================
 
-ion-toolbar {
-  --background: #0A1929;
-  --color: #ffffff;
-  --border-width: 0;
-}
-
-ion-content {
-  --background: #F0F4F7;
-}
-
-// Hero Section: gradiente oscuro con decoración circular
-.hero-section {
-  background: linear-gradient(135deg, #0A1929 0%, #112A46 50%, #153A62 100%);
-  padding: 50px 24px 80px;
-  position: relative;
-  overflow: hidden;
-  margin-top: -1px;
-}
-
-// Elemento decorativo circular (pseudo-elemento para profundidad visual)
-.hero-decoration {
-  position: absolute;
-  top: -40px;
-  right: -40px;
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
+// Aurora ambient background
+.aurora-container {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
   pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -80px;
-    left: -60px;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.04);
+.aurora-blob {
+  position: absolute;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  filter: blur(150px);
+}
+
+.aurora-1 {
+  top: -20%; right: -10%;
+  width: 800px; height: 800px;
+  background: rgba(190, 198, 224, 0.15);
+  animation: aurora-1 20s ease-in-out infinite;
+}
+.aurora-2 {
+  bottom: -20%; left: -20%;
+  width: 700px; height: 700px;
+  background: rgba(175, 141, 17, 0.2);
+  animation: aurora-2 25s ease-in-out infinite;
+}
+.aurora-3 {
+  top: 40%; left: 20%;
+  width: 500px; height: 500px;
+  background: rgba(188, 199, 222, 0.08);
+  animation: aurora-1 22s ease-in-out infinite;
+  animation-delay: 5s;
+}
+
+// Hero section
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 65vh;
+  padding: 40px 24px 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.hero-name {
+  font-size: 48px;
+  line-height: 1.1;
+  margin: 0 0 12px;
+  cursor: default;
+  transition: transform 0.5s ease;
+
+  &:hover { transform: scale(1.03); }
+
+  @media (min-width: 768px) {
+    font-size: 64px;
   }
 }
 
-// Contenido del Hero centrado con max-width para responsividad
-.hero-content {
+.hero-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #bec6e0;
+  margin: 0 0 24px;
+
+  @media (min-width: 768px) {
+    font-size: 15px;
+  }
+}
+
+.hero-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.65;
+  color: #c6c6cd;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+// Scroll indicator
+.scroll-indicator {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.6;
+}
+
+.scroll-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #c6c6cd;
+  margin-bottom: 4px;
+}
+
+.scroll-icon {
+  font-size: 18px;
+  color: #e9c349;
+}
+
+// Expertise section
+.expertise-section {
+  padding: 0 16px 80px;
+  max-width: 960px;
+  margin: 0 auto;
   position: relative;
   z-index: 1;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
+
+  @media (min-width: 768px) {
+    padding: 0 24px 120px;
+  }
 }
 
-.hero-greeting {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 15px;
-  font-weight: 400;
-  margin: 0 0 6px;
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 16px;
+  margin-bottom: 32px;
 }
 
-// Nombre principal con tamaño grande para la fuente cursiva Royal
-.hero-name {
-  color: #ffffff;
-  font-size: 48px;
-  font-weight: 400;
-  margin: 0 0 4px;
-  line-height: 1.2;
+.section-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #bec6e0;
+  margin: 0;
+
+  @media (min-width: 768px) {
+    font-size: 32px;
+  }
 }
 
-.hero-role {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 14px;
-  font-weight: 400;
+.section-icon {
+  font-size: 28px;
+  color: #e9c349;
+}
+
+// Grid layout
+.expertise-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+  }
+}
+
+// Philosophy panel – spans 8 columns
+.philosophy-card {
+  position: relative;
+  overflow: hidden;
+  padding: 32px 28px;
+
+  @media (min-width: 768px) {
+    grid-column: span 8;
+  }
+}
+
+.card-glow {
+  position: absolute;
+  top: 0; right: 0;
+  width: 120px; height: 120px;
+  background: rgba(233, 195, 73, 0.05);
+  border-bottom-left-radius: 100%;
+  filter: blur(40px);
+  transition: background 0.5s ease;
+}
+.philosophy-card:hover .card-glow {
+  background: rgba(233, 195, 73, 0.1);
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: 500;
+  color: #bec6e0;
   margin: 0 0 12px;
 }
 
-.hero-date {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 12px;
+.card-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
   font-weight: 300;
-  text-transform: capitalize;
+  line-height: 1.65;
+  color: #c6c6cd;
   margin: 0;
 }
 
-// Content Section: margen negativo para que las tarjetas se solapen con el Hero
-.content-section {
-  padding: 0 16px 40px;
-  margin-top: -40px;
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+.text-accent {
+  color: #e9c349;
+  border-bottom: 1px solid rgba(233, 195, 73, 0.3);
+  padding-bottom: 1px;
 }
 
-// Tarjetas con efecto Glassmorphism (fondo translúcido + desenfoque)
-.info-card {
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-  padding: 28px 24px;
-  margin-bottom: 24px;
-  box-shadow: 0 12px 32px rgba(27, 58, 75, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
-
-  // Hover solo para dispositivos con ratón (desktop)
-  @media (hover: hover) {
-    &:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(27, 58, 75, 0.12);
-    }
-  }
-
-  // Feedback táctil para móvil
-  &:active {
-    transform: scale(0.98);
-  }
-
-  // Variante centrada para la tarjeta de bienvenida
-  &.welcome-card {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  h3 {
-    font-size: 18px;
-    color: #1E2D3A;
-    margin: 12px 0 8px;
-    font-weight: 600;
-  }
-
-  p {
-    font-size: 14px;
-    color: #5D6D7E;
-    line-height: 1.6;
-    margin: 0;
-  }
-}
-
-// Ícono grande para la tarjeta de bienvenida
-.large-icon-wrapper {
-  font-size: 56px;
-  color: #0A1929;
-  margin-bottom: 8px;
+// Focus card (Multiplataforma) – spans 4 columns
+.focus-card {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @media (min-width: 768px) {
+    grid-column: span 4;
+  }
 }
 
-// Wrapper para íconos pequeños en tarjetas secundarias
-.card-icon-wrapper {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #2C4F5F, #3A7A8C);
+.focus-icon-wrapper {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: rgba(18, 33, 49, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, background 0.3s ease;
 
   ion-icon {
-    color: #ffffff;
     font-size: 22px;
+    color: #e9c349;
   }
+}
+.focus-card:hover .focus-icon-wrapper {
+  transform: scale(1.1);
+  background: rgba(28, 43, 60, 0.9);
+}
 
-  &.secondary {
-    background: linear-gradient(135deg, #E05A47, #E87D6E);
+.card-title-sm {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+  font-weight: 500;
+  color: #bec6e0;
+  margin: 0 0 6px;
+}
+
+.card-text-sm {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.55;
+  color: #c6c6cd;
+  margin: 0;
+}
+
+// Horizontal focus cards (TS + Angular) – span 6 columns each
+.focus-horizontal {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  @media (min-width: 768px) {
+    grid-column: span 6;
   }
 }
 
-// Fila de estadísticas con CSS Grid (3 columnas iguales)
-.stats-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-bottom: 24px;
+.focus-icon-box {
+  flex-shrink: 0;
+  width: 56px; height: 56px;
+  border-radius: 12px;
+  background: rgba(18, 33, 49, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+.focus-horizontal:hover .focus-icon-box {
+  transform: scale(1.05);
 }
 
-// Mini-tarjetas de estadísticas
-.stat-card {
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  padding: 20px 10px;
-  text-align: center;
-  box-shadow: 0 8px 24px rgba(10, 25, 41, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-
-  .stat-icon {
-    font-size: 38px;
-    color: #0A1929;
-    margin-bottom: 8px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  // Ícono personalizado para TypeScript (no existe en Ionicons)
-  .ts-icon {
-    width: 32px;
-    height: 32px;
-    background: #0A1929;
-    color: #ffffff;
-    border-radius: 6px;
-    font-size: 18px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 12px;
-  }
-
-  .stat-number {
-    font-family: 'Inter', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    color: #0A1929;
-    margin-bottom: 4px;
-  }
-
-  .stat-label {
-    font-size: 10.5px;
-    color: #5D6D7E;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
+.ts-badge {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #e9c349;
 }

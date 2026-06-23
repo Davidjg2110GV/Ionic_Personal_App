@@ -1,44 +1,37 @@
-// Estilos de la página de Contacto
-// Diseño tipo portafolio: hero con nombre, botones sociales y footer.
+// ==========================================================
+// Contacto – Aurelian Tech Dark Theme
+// ==========================================================
 
-ion-toolbar {
-  --background: #0A1929;
-  --color: #ffffff;
-  --border-width: 0;
-}
-
-ion-content {
-  --background: linear-gradient(135deg, #0A1929 0%, #112A46 50%, #153A62 100%);
-}
-
-// Hero de contacto centrado
+// Hero section
 .contact-hero {
   text-align: center;
-  padding: 32px 16px 28px;
+  padding: 40px 16px 28px;
 }
 
 .contact-name {
-  font-size: 52px;
+  font-size: 44px;
   line-height: 1.1;
-  margin: 0 0 8px;
-  @media (max-width: 360px) { font-size: 40px; }
+  margin: 0 0 10px;
+  @media (max-width: 360px) { font-size: 36px; }
 }
 
 .contact-role {
-  color: rgba(255, 255, 255, 0.85);
+  color: #bec6e0;
+  font-family: 'Inter', sans-serif;
   font-size: 15px;
   font-weight: 500;
   margin: 0 0 6px;
 }
 
 .contact-subtitle {
-  color: rgba(255, 255, 255, 0.5);
+  color: #909097;
+  font-family: 'Inter', sans-serif;
   font-size: 12.5px;
   font-weight: 300;
   margin: 0;
 }
 
-// Botones de redes sociales tipo "pill"
+// Social link buttons – dark glassmorphism style
 .social-links-section {
   display: flex;
   flex-direction: column;
@@ -53,35 +46,38 @@ ion-content {
   gap: 12px;
   width: 100%;
   padding: 15px 20px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(10px);
-  color: #0A1929;
+  border-radius: 12px;
+  background: rgba(18, 33, 49, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #d4e4fa;
   font-family: 'Inter', sans-serif;
   font-size: 15px;
   font-weight: 600;
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 8px 24px rgba(10, 25, 41, 0.08);
+  border: 1px solid rgba(190, 198, 224, 0.1);
   transition: all 0.25s ease;
-  ion-icon { font-size: 22px; }
+
+  ion-icon {
+    font-size: 22px;
+    color: #e9c349;
+  }
 
   @media (hover: hover) {
     &:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 32px rgba(10, 25, 41, 0.14);
+      box-shadow: 0 12px 32px rgba(233, 195, 73, 0.08);
+      border-color: rgba(233, 195, 73, 0.25);
+      background: rgba(18, 33, 49, 0.8);
     }
   }
   &:active { transform: scale(0.97); }
 }
 
-// Colores de íconos según marca
-.linkedin-btn ion-icon { color: #0A66C2; }
-.github-btn ion-icon { color: #24292F; }
-.email-btn ion-icon { color: #153A62; }
-
-// Footer informativo
-.contact-footer { padding: 8px 0 0; }
+// Footer info
+.contact-footer {
+  padding: 8px 0 0;
+}
 
 .contact-info-row {
   display: flex;
@@ -95,14 +91,16 @@ ion-content {
   display: flex;
   align-items: center;
   gap: 6px;
-  color: rgba(255, 255, 255, 0.55);
+  color: #909097;
+  font-family: 'Inter', sans-serif;
   font-size: 13px;
-  ion-icon { font-size: 16px; }
+  ion-icon { font-size: 16px; color: #e9c349; }
 }
 
 .footer-text {
   text-align: center;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(144, 144, 151, 0.5);
+  font-family: 'Inter', sans-serif;
   font-size: 11px;
   margin: 12px 0 0;
 }

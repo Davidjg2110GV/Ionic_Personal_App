@@ -1,50 +1,70 @@
-// Paleta de colores profesional basada en el sketch del usuario.
-// Utilicé tonos teal/azul acero para transmitir confianza y profesionalismo,
-// combinados con un acento coral para los elementos interactivos.
+// ==========================================================
+// Aurelian Tech – Design System Variables
+// Paleta: Oxford Navy + Aurelian Gold
+// ==========================================================
 
 :root {
-  // --- Colores primarios (teal oscuro profesional) ---
-  --ion-color-primary: #2C4F5F;
-  --ion-color-primary-rgb: 44, 79, 95;
-  --ion-color-primary-contrast: #ffffff;
-  --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #254554;
-  --ion-color-primary-tint: #41616f;
+  // --- Primary: Aurelian muted blue (bec6e0) ---
+  --ion-color-primary: #bec6e0;
+  --ion-color-primary-rgb: 190, 198, 224;
+  --ion-color-primary-contrast: #283044;
+  --ion-color-primary-contrast-rgb: 40, 48, 68;
+  --ion-color-primary-shade: #a7aec5;
+  --ion-color-primary-tint: #c5cce3;
 
-  // --- Colores secundarios (teal medio) ---
-  --ion-color-secondary: #3A7A8C;
-  --ion-color-secondary-rgb: 58, 122, 140;
-  --ion-color-secondary-contrast: #ffffff;
-  --ion-color-secondary-contrast-rgb: 255, 255, 255;
-  --ion-color-secondary-shade: #336B7B;
-  --ion-color-secondary-tint: #4E8898;
+  // --- Secondary: Aurelian Gold ---
+  --ion-color-secondary: #e9c349;
+  --ion-color-secondary-rgb: 233, 195, 73;
+  --ion-color-secondary-contrast: #3c2f00;
+  --ion-color-secondary-contrast-rgb: 60, 47, 0;
+  --ion-color-secondary-shade: #cdab40;
+  --ion-color-secondary-tint: #ebc95b;
 
-  // --- Color de acento (coral/rojo cálido) ---
-  --ion-color-danger: #E05A47;
-  --ion-color-danger-rgb: 224, 90, 71;
-  --ion-color-danger-contrast: #ffffff;
-  --ion-color-danger-contrast-rgb: 255, 255, 255;
-  --ion-color-danger-shade: #C44F3E;
-  --ion-color-danger-tint: #E36B5A;
+  // --- Tertiary ---
+  --ion-color-tertiary: #bcc7de;
+  --ion-color-tertiary-rgb: 188, 199, 222;
+  --ion-color-tertiary-contrast: #263143;
+  --ion-color-tertiary-contrast-rgb: 38, 49, 67;
+  --ion-color-tertiary-shade: #a5afc3;
+  --ion-color-tertiary-tint: #c3cde1;
 
-  // --- Éxito ---
-  --ion-color-success: #2ECC71;
-  --ion-color-success-rgb: 46, 204, 113;
-  --ion-color-success-contrast: #ffffff;
-  --ion-color-success-contrast-rgb: 255, 255, 255;
-  --ion-color-success-shade: #28B463;
-  --ion-color-success-tint: #43D17F;
+  // --- Danger / Error ---
+  --ion-color-danger: #ffb4ab;
+  --ion-color-danger-rgb: 255, 180, 171;
+  --ion-color-danger-contrast: #690005;
+  --ion-color-danger-contrast-rgb: 105, 0, 5;
+  --ion-color-danger-shade: #e09e96;
+  --ion-color-danger-tint: #ffbcb3;
+
+  // --- Success ---
+  --ion-color-success: #7dd99b;
+  --ion-color-success-rgb: 125, 217, 155;
+  --ion-color-success-contrast: #003919;
+  --ion-color-success-contrast-rgb: 0, 57, 25;
+  --ion-color-success-shade: #6ebf88;
+  --ion-color-success-tint: #8adda5;
 
   // --- Warning ---
-  --ion-color-warning: #F39C12;
-  --ion-color-warning-rgb: 243, 156, 18;
-  --ion-color-warning-contrast: #000000;
-  --ion-color-warning-contrast-rgb: 0, 0, 0;
-  --ion-color-warning-shade: #D68910;
-  --ion-color-warning-tint: #F4A62A;
+  --ion-color-warning: #e9c349;
+  --ion-color-warning-rgb: 233, 195, 73;
+  --ion-color-warning-contrast: #3c2f00;
+  --ion-color-warning-contrast-rgb: 60, 47, 0;
+  --ion-color-warning-shade: #cdab40;
+  --ion-color-warning-tint: #ebc95b;
 
-  // --- Fondo y tipografía ---
-  --ion-background-color: #F0F4F7;
-  --ion-text-color: #1E2D3A;
+  // --- Global background & text (Dark theme) ---
+  --ion-background-color: #051424;
+  --ion-background-color-rgb: 5, 20, 36;
+  --ion-text-color: #d4e4fa;
+  --ion-text-color-rgb: 212, 228, 250;
   --ion-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  // --- Surface & Toolbar variables ---
+  --ion-toolbar-background: rgba(13, 28, 45, 0.85);
+  --ion-toolbar-color: #d4e4fa;
+  --ion-item-background: transparent;
+  --ion-card-background: rgba(18, 33, 49, 0.6);
+  --ion-tab-bar-background: rgba(13, 28, 45, 0.85);
+  --ion-tab-bar-color: #909097;
+  --ion-tab-bar-color-selected: #e9c349;
 }

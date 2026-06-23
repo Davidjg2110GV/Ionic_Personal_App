@@ -1,43 +1,40 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title class="heading-royal text-gold">Información Personal</ion-title>
+    <ion-title class="heading-serif" style="color: #bec6e0; font-size: 20px; font-style: normal;">Información Personal</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <!-- Grid responsivo: size="12" en móvil, size-md/lg para centrar en PC -->
   <ion-grid fixed>
     <ion-row class="ion-justify-content-center">
       <ion-col size="12" size-md="10" size-lg="8">
         <div class="profile-page">
 
-    <!-- Tarjeta: Resumen Profesional -->
-    <div class="profile-card resumen-card">
+    <!-- Card: Professional Summary -->
+    <div class="glass-card resumen-card animate-fade-in-up">
       <div class="card-header-row">
         <ion-icon name="briefcase-outline" class="card-header-icon"></ion-icon>
-        <h2 class="heading-serif">Resumen Profesional</h2>
+        <h2 class="heading-serif card-header-title">Resumen Profesional</h2>
       </div>
       <div class="resumen-content">
         <div class="avatar-wrapper">
           <img [src]="misDatos.fotoUrl" alt="Foto de perfil" />
         </div>
-        <!-- text-navy-royal se usa en fondos blancos para que sea legible -->
-        <h1 class="profile-name heading-royal text-navy-royal">{{ misDatos.nombre }}</h1>
+        <h1 class="profile-name font-script text-gold">{{ misDatos.nombre }}</h1>
         <p class="profile-id">{{ misDatos.cedula }}</p>
         <p class="profile-bio">{{ resumenProfesional }}</p>
       </div>
     </div>
 
-    <!-- Grid de 2 columnas: Educación y Experiencia lado a lado en desktop -->
+    <!-- Two-column grid: Education and Experience -->
     <div class="two-col-grid">
 
-      <!-- Tarjeta: Educación -->
-      <div class="profile-card">
+      <!-- Card: Education -->
+      <div class="glass-card animate-fade-in-up delay-100">
         <div class="card-header-row">
           <ion-icon name="school-outline" class="card-header-icon"></ion-icon>
-          <h2 class="heading-serif">Educación</h2>
+          <h2 class="heading-serif card-header-title">Educación</h2>
         </div>
-        <!-- Iteración con *ngFor sobre el arreglo de educación -->
         <div class="entry" *ngFor="let edu of educacion">
           <h4 class="entry-title">{{ edu.titulo }}</h4>
           <p class="entry-detail"><strong>{{ edu.institucion }}</strong> ({{ edu.periodo }})</p>
@@ -45,11 +42,11 @@
         </div>
       </div>
 
-      <!-- Tarjeta: Experiencia Profesional -->
-      <div class="profile-card">
+      <!-- Card: Experience -->
+      <div class="glass-card animate-fade-in-up delay-200">
         <div class="card-header-row">
           <ion-icon name="trending-up-outline" class="card-header-icon"></ion-icon>
-          <h2 class="heading-serif">Experiencia</h2>
+          <h2 class="heading-serif card-header-title">Experiencia</h2>
         </div>
         <div class="entry" *ngFor="let exp of experiencia">
           <h4 class="entry-title">{{ exp.cargo }}</h4>
@@ -60,11 +57,11 @@
 
     </div>
 
-    <!-- Tarjeta: Habilidades con chips de nombre + nivel -->
-    <div class="profile-card habilidades-card">
+    <!-- Card: Skills with chips -->
+    <div class="glass-card habilidades-card animate-fade-in-up delay-300">
       <div class="card-header-row">
         <ion-icon name="code-slash-outline" class="card-header-icon"></ion-icon>
-        <h2 class="heading-serif">Habilidades</h2>
+        <h2 class="heading-serif card-header-title">Habilidades</h2>
       </div>
       <div class="chips-container">
         <div class="skill-chip" *ngFor="let skill of habilidades">
