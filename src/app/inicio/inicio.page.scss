@@ -9,13 +9,18 @@
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
+  contain: strict; // Isolates layout/painting of the animating blobs from the rest of the page
 }
 
 .aurora-blob {
   position: absolute;
   border-radius: 50%;
   mix-blend-mode: screen;
-  filter: blur(150px);
+  filter: blur(100px); // Slightly reduced from 150px to dramatically reduce GPU fill rate overhead
+  transform: translate3d(0, 0, 0); // Forces GPU hardware layer promotion
+  will-change: transform; // Informs the browser to prepare for animation optimization
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 .aurora-1 {

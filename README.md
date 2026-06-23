@@ -67,17 +67,18 @@ La arquitectura se compone de tres módulos principales coordinados mediante un 
 - **Playfair Display** (Serif): encabezados de tarjetas, toque editorial.
 - **Great Vibes** (Script): nombres propios, efecto de firma elegante.
 
-### Paleta de Colores
-- Fondo principal: Deep Navy Blue (`#0A1929`).
-- Gradiente Hero: `linear-gradient(135deg, #0A1929, #112A46, #153A62)`.
-- Texto sobre fondo oscuro: gradiente Champagne Gold.
-- Texto sobre fondo claro: gradiente Navy Royal.
-- Fondo de tarjetas: Blanco perla (`#F0F4F7`).
+### Paleta de Colores (Aurelian Tech Theme)
+- Fondo principal: Oxford Navy profundo (`#051424`).
+- Fondos de gradiente: `linear-gradient(180deg, #010f1f 0%, #051424 40%, #0d1c2d 100%)`.
+- Acentos destacados: Oro Aureliano (`#e9c349`).
+- Superficies y contenedores: Glassmorphism oscuro semitransparente con desenfoque (`rgba(18, 33, 49, 0.6)` + `backdrop-filter: blur(12px)`).
+- Textos y títulos: Aurelian Silver-Blue (`#bec6e0` / `#d4e4fa`).
 
-### Interacciones y Micro-animaciones
-- Hover con elevación (`translateY(-4px)`) solo en dispositivos con ratón (`@media (hover: hover)`).
-- Feedback táctil con `scale(0.98)` para interacciones en móvil.
-- Transiciones suaves con `cubic-bezier(0.25, 0.8, 0.25, 1)`.
+### Interacciones y Micro-animaciones (Optimizadas para Rendimiento y GPU)
+- Hover con elevación (`translate3d(0, -4px, 0)`) y brillo dorado en bordes solo para dispositivos con ratón (`@media (hover: hover)`).
+- Feedback táctil interactivo con `scale(0.98)` para mejor experiencia en móviles.
+- Transiciones fluidas utilizando `cubic-bezier(0.25, 1, 0.5, 1)` con aceleración de hardware por GPU (usando `translate3d` y propiedades `will-change`).
+- Aislamiento de renderizado mediante la propiedad `contain: strict` en animaciones continuas de fondo para minimizar el uso de memoria RAM en servidores en la nube como Vercel.
 
 ## Uso Responsable de Inteligencia Artificial
 

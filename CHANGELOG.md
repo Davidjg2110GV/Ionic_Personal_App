@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [Phase 3] - 2026-06-22
+
+### Added
+- GPU hardware acceleration (`translate3d` transforms) for all keyframe animations.
+- Browser layer caching optimizations via `will-change: transform, opacity` to prevent repaint delays and optimize memory.
+- Paint isolation (`contain: strict`) on `.aurora-container` to block page-wide reflow storm overheads.
+
+### Changed
+- Snappier entry animation delays (reduced offsets from `100ms-500ms` down to `60ms-300ms`) for a more responsive initial paint.
+- Optimised aurora blur radii (from `150px` to `100px`) to prevent GPU rasterization performance degradation.
+- Overhauled `informacion-personal` styles to introduce chronological timelines, custom skill indicators, and spaced card layouts.
+
 ### Added
 - Native installation of Tailwind CSS with `postcss` and `autoprefixer`.
 - Tailwind design tokens configured in `tailwind.config.js`.

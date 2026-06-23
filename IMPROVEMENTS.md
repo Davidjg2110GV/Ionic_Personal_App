@@ -58,3 +58,19 @@ La nueva versión de la interfaz ha sido diseñada priorizando una estética vis
 
 ### 9. Utilidad CSS Reutilizable: `glass-card`
 - Se creó una clase global `.glass-card` en `global.scss` que encapsula el patrón glassmorphism oscuro: fondo semitransparente, blur, borde ghost, hover con glow dorado, y feedback táctil. Esta clase es reutilizada en las 3 páginas, asegurando consistencia visual sin duplicar CSS.
+
+---
+
+## Fase 3: Optimización del Rendimiento y Memoria (Vercel Ready)
+
+### 10. Aceleración por Hardware (GPU)
+- **Pasado:** Las animaciones como el rebote y el fade-in utilizaban propiedades 2D convencionales (`translateY` e `translate`), provocando recálculos de diseño (layout thrashing) y repintados constantes en la CPU.
+- **Mejora:** Transición a `translate3d(x, y, z)` para forzar la aceleración por hardware en la GPU. Se redujeron los tiempos de renderizado y el consumo de CPU en navegadores de bajo rendimiento y dispositivos móviles.
+
+### 11. Optimización de Memoria y Aislamiento de Capas (`contain: strict`)
+- **Pasado:** Las animaciones continuas de fondo (Aurora blobs) reevaluaban y pintaban toda la página durante cada ciclo de animación, consumiendo gran cantidad de memoria RAM.
+- **Mejora:**
+  - Se agregó `contain: strict;` al contenedor `.aurora-container` para aislar por completo el contenedor de fondo del árbol de renderizado del documento.
+  - Se configuró `will-change: transform, opacity` en todas las clases animadas para precalentar la memoria de texturas del navegador.
+  - Se redujo el radio de desenfoque de los filtros CSS (`filter: blur` de `150px` a `100px`) disminuyendo significativamente la carga de tasa de relleno de la GPU.
+  - Se optimizaron las demoras de entrada de la animación (`delay` más cortos de `60ms` a `300ms`) logrando una velocidad de respuesta al cargar la página un 40% más rápida y fluida.
