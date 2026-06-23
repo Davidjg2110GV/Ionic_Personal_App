@@ -27,5 +27,34 @@ Este documento detalla las mejoras aplicadas en la actualización del frontend d
   - Animación secuencial de entrada (`animate-fade-in-up`) utilizando retrasos (`delay-100`, `delay-200`, etc.) que generan un efecto de cascada sumamente profesional.
   - Un indicador de scroll inferior con un sutil `animate-bounce-slow` para invitar a la interacción.
 
-## Conclusión
+## Conclusión (Fase 1)
 La nueva versión de la interfaz ha sido diseñada priorizando una estética visual del más alto nivel, proyectando una imagen verdaderamente *Senior* y estableciendo un patrón claro que podrá ser extendido a las demás secciones de la aplicación (Proyectos, Acerca de, Contacto).
+
+---
+
+## Fase 2: Unificación del Design System "Aurelian Tech"
+
+### 5. Eliminación de Navegación Duplicada
+- **Pasado:** La página de inicio contenía su propia barra de navegación inferior personalizada (`<nav>` con clases de Tailwind) ADEMÁS de la barra nativa de Ionic (`ion-tab-bar`), resultando en dos barras superpuestas.
+- **Mejora:** Se eliminó la navegación personalizada del HTML de inicio. Ahora la única barra de navegación es la `ion-tab-bar` de Ionic, restibalizada con el design system Aurelian Tech: fondo glassmorphism (`backdrop-filter: blur(16px)`), dorado para el tab activo, y outline muted para tabs inactivos.
+
+### 6. Header Unificado con Efecto Glass
+- **Pasado:** Los `ion-toolbar` de cada página tenían estilos locales inconsistentes (fondo sólido `#0A1929`, sin blur).
+- **Mejora:** Todos los headers ahora heredan un estilo global: fondo semitransparente (`rgba(13, 28, 45, 0.85)`), `backdrop-filter: blur(16px)`, borde inferior ghost de 1px con opacidad del 8%. El efecto es consistente en las 3 pestañas sin necesidad de duplicar CSS.
+
+### 7. Paleta de Colores Aurelian Tech Completa
+- **Pasado:** Se usaban colores teal (`#2C4F5F`, `#3A7A8C`) y coral (`#E05A47`) que no pertenecían al design system definido.
+- **Mejora:** Se reescribió completamente `theme/variables.scss` con los tokens oficiales de Aurelian Tech:
+  - **Primary:** `#bec6e0` (Aurelian Silver-Blue)
+  - **Secondary / Warning:** `#e9c349` (Aurelian Gold)
+  - **Background:** `#051424` (Oxford Navy profundo)
+  - **Surfaces:** Escala completa de contenedores oscuros (`#010f1f` → `#273647`)
+  - **On-Surface:** `#d4e4fa` (texto claro sobre fondos oscuros)
+
+### 8. Rediseño de Todas las Páginas
+- **Información Personal:** Las tarjetas blancas opacas (`rgba(255, 255, 255, 0.96)`) se reemplazaron por `glass-card` oscuras con bordes ghost. Los badges de educación y los chips de habilidades ahora usan acentos dorados (`rgba(233, 195, 73, 0.1)` background, texto `#e9c349`).
+- **Contacto:** Los botones blancos con texto oscuro se transformaron en botones glassmorphism oscuros con iconos dorados y hover con glow dorado. El footer usa iconos dorados con texto muted.
+- **Inicio:** Se integró correctamente con `ion-header` nativo de Ionic en lugar de un header HTML personalizado fijo.
+
+### 9. Utilidad CSS Reutilizable: `glass-card`
+- Se creó una clase global `.glass-card` en `global.scss` que encapsula el patrón glassmorphism oscuro: fondo semitransparente, blur, borde ghost, hover con glow dorado, y feedback táctil. Esta clase es reutilizada en las 3 páginas, asegurando consistencia visual sin duplicar CSS.
