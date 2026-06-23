@@ -1,65 +1,99 @@
-<ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-title class="heading-royal text-gold">Inicio</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-
-  <!-- Hero Section: Banner principal con saludo y nombre -->
-  <div class="hero-section">
-    <div class="hero-content">
-      <p class="hero-greeting">{{ saludo }} </p>
-      <h1 class="hero-name heading-royal text-gold">David Gonzalez</h1>
-      <p class="hero-role">Ingeniero en Sistemas &bull; UNETI</p>
-      <p class="hero-date">{{ fechaActual }}</p>
-    </div>
-    <div class="hero-decoration"></div>
-  </div>
-
-  <!-- Tarjetas de contenido con efecto glassmorphism -->
-  <div class="content-section">
-
-    <!-- Tarjeta principal de bienvenida -->
-    <div class="info-card welcome-card">
-      <div class="large-icon-wrapper">
-        <ion-icon name="rocket"></ion-icon>
-      </div>
-      <h3 class="heading-serif">Portafolio Profesional</h3>
-      <p>Presentación interactiva desarrollada para la evaluación práctica. Diseñada con estándares modernos de UI/UX
-        utilizando <strong>Ionic Framework</strong> y <strong>Angular</strong> para garantizar un rendimiento óptimo.
-      </p>
-    </div>
-
-    <!-- Fila de estadísticas con íconos -->
-    <div class="stats-row">
-      <div class="stat-card">
-        <ion-icon name="server" class="stat-icon"></ion-icon>
-        <div class="stat-number">3</div>
-        <div class="stat-label">SECCIONES</div>
-      </div>
-      <div class="stat-card">
-        <ion-icon name="logo-ionic" class="stat-icon"></ion-icon>
-        <div class="stat-number">Ionic</div>
-        <div class="stat-label">FRAMEWORK</div>
-      </div>
-      <div class="stat-card">
-        <div class="ts-icon">TS</div>
-        <div class="stat-number">TS</div>
-        <div class="stat-label">LENGUAJE</div>
-      </div>
-    </div>
-
-    <!-- Tarjeta de navegación -->
-    <div class="info-card">
-      <div class="card-icon-wrapper secondary">
-        <ion-icon name="compass-outline"></ion-icon>
-      </div>
-      <h3 class="heading-serif">Explora el Proyecto</h3>
-      <p>Accede a la sección de <strong>Perfil</strong> para conocer mi trayectoria técnica y académica, o dirígete a
-        <strong>Contacto</strong> para establecer comunicación directa.
-      </p>
-    </div>
-  </div>
-
-</ion-content>
+<!-- Ambient Background Glows (Aurora Effect) -->
+<div class="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-gradient-to-b from-[#010f1f] to-[#051424]">
+<div class="absolute top-[-20%] right-[-10%] w-[1000px] h-[1000px] bg-primary/20 rounded-full blur-[150px] animate-aurora-1 mix-blend-screen"></div>
+<div class="absolute bottom-[-20%] left-[-20%] w-[800px] h-[800px] bg-secondary-container/30 rounded-full blur-[150px] animate-aurora-2 mix-blend-screen"></div>
+<div class="absolute top-[40%] left-[20%] w-[600px] h-[600px] bg-tertiary/10 rounded-full blur-[120px] animate-aurora-1 delay-500 mix-blend-screen"></div>
+</div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-gutter py-stack-md max-w-container-max mx-auto left-0 right-0 glass-panel border-x-0 border-t-0 border-b border-white/5 transition-all duration-300 animate-fade-in-up">
+<div class="font-script text-[32px] text-primary hover:text-secondary transition-colors cursor-pointer">
+            D.G.
+        </div>
+<a class="text-label-caps font-label-caps text-on-surface-variant hover:text-secondary transition-colors tracking-widest uppercase" href="mailto:contact@davidgonzalez.dev">
+        Contacto
+    </a>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow z-10 relative pt-[120px] pb-section-padding px-margin-mobile md:px-gutter max-w-container-max mx-auto w-full flex flex-col items-center justify-start">
+<!-- Hero Section -->
+<section class="w-full max-w-5xl mx-auto flex flex-col items-center justify-center min-h-[70vh] relative mb-stack-lg">
+<div class="text-center z-10">
+<h1 class="font-script text-display-lg-mobile md:text-display-lg text-secondary mb-6 leading-tight drop-shadow-lg animate-fade-in-up delay-100 hover:scale-105 transition-transform duration-500 cursor-default">
+                David Gonzalez
+            </h1>
+<h2 class="font-label-caps text-[14px] md:text-[16px] text-primary tracking-[0.2em] uppercase mb-stack-lg font-semibold animate-fade-in-up delay-200">
+                Ingeniero Frontend Senior
+            </h2>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-stack-lg font-light leading-relaxed animate-fade-in-up delay-300">
+                Construyendo aplicaciones web escalables y de alto rendimiento con un enfoque en experiencias de usuario excepcionales y una arquitectura robusta.
+            </p>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-70 animate-bounce-slow animate-fade-in-up delay-500">
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant mb-2 pulse">Explorar</span>
+<span class="material-symbols-outlined text-secondary text-[20px] font-light">south</span>
+</div>
+</section>
+<!-- Professional Overview & Core Expertise (Integrated Layout) -->
+<section class="w-full max-w-5xl mx-auto mb-section-padding">
+<!-- Header -->
+<div class="mb-12 border-b border-white/10 pb-6 flex items-center justify-between animate-fade-in-up">
+<h3 class="font-headline-md text-headline-md text-primary font-medium">Especialidad Técnica</h3>
+<span class="material-symbols-outlined text-secondary text-[32px] font-light">code</span>
+</div>
+<!-- Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Main Bio/Philosophy Panel (Spans 8 cols on large screens) -->
+<div class="glass-panel rounded-2xl p-8 md:p-10 col-span-1 md:col-span-8 flex flex-col justify-center relative overflow-hidden group hover:border-primary/40 hover:-translate-y-1 hover:shadow-2xl transition-all duration-500 animate-fade-in-up delay-100">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-bl-full blur-2xl group-hover:bg-secondary/10 transition-colors duration-500"></div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-4 font-medium">Filosofía de Ingeniería</h4>
+<p class="font-body-md text-on-surface-variant leading-relaxed font-light">
+                    Me especializo en la creación de interfaces de usuario complejas e interactivas que exigen tanto <span class="text-secondary border-b border-secondary/30 pb-0.5">alto rendimiento</span> como <span class="text-secondary border-b border-secondary/30 pb-0.5">bases de código mantenibles</span>. Mi enfoque combina sistemas de diseño modernos con sólidos principios de ingeniería de software para ofrecer soluciones escalables.
+                </p>
+</div>
+<!-- Focus Area 1 (Spans 4 cols) -->
+<div class="glass-panel rounded-2xl p-8 col-span-1 md:col-span-4 flex flex-col items-start hover:-translate-y-2 hover:shadow-xl hover:border-secondary/30 transition-all duration-300 group animate-fade-in-up delay-200">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center mb-6 border border-white/5 group-hover:scale-110 group-hover:bg-surface-container-high transition-all duration-300">
+<span class="material-symbols-outlined text-secondary">devices</span>
+</div>
+<h4 class="font-headline-sm text-[20px] text-primary mb-2">Multiplataforma</h4>
+<p class="font-body-md text-on-surface-variant text-sm font-light">Amplia experiencia en Ionic Framework para crear experiencias móviles y PWA de calidad nativa desde un único código base.</p>
+</div>
+<!-- Focus Area 2 (Spans 6 cols) -->
+<div class="glass-panel rounded-2xl p-8 col-span-1 md:col-span-6 flex items-center gap-6 hover:-translate-y-1 hover:shadow-xl hover:border-secondary/30 transition-all duration-300 group animate-fade-in-up delay-300">
+<div class="flex-shrink-0 w-16 h-16 rounded-xl bg-surface-container flex items-center justify-center border border-white/5 shadow-inner group-hover:scale-105 transition-transform duration-300">
+<span class="text-secondary font-bold text-2xl font-body-lg">TS</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-[20px] text-primary mb-1">Arquitectura TypeScript</h4>
+<p class="font-body-md text-on-surface-variant text-sm font-light">Tipado estricto, patrones de diseño avanzados y gestión de estado robusta para aplicaciones a escala empresarial.</p>
+</div>
+</div>
+<!-- Focus Area 3 (Spans 6 cols) -->
+<div class="glass-panel rounded-2xl p-8 col-span-1 md:col-span-6 flex items-center gap-6 hover:-translate-y-1 hover:shadow-xl hover:border-secondary/30 transition-all duration-300 group animate-fade-in-up delay-400">
+<div class="flex-shrink-0 w-16 h-16 rounded-xl bg-surface-container flex items-center justify-center border border-white/5 shadow-inner group-hover:scale-105 transition-transform duration-300">
+<span class="material-symbols-outlined text-secondary text-[32px]">webhook</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-[20px] text-primary mb-1">Ecosistema Angular</h4>
+<p class="font-body-md text-on-surface-variant text-sm font-light">Programación reactiva con RxJS, arquitectura de componentes y estrategias de optimización del rendimiento.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="glass-panel text-on-surface-variant font-label-caps text-label-caps border-t border-white/5 fixed bottom-0 left-0 w-full z-50 flex justify-center gap-8 md:gap-16 items-center px-4 py-4 pb-safe animate-fade-in-up">
+<a class="flex flex-col items-center justify-center text-secondary transition-colors group" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px] group-hover:-translate-y-1 transition-transform" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-[10px] tracking-wider opacity-100">Resumen</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px] group-hover:-translate-y-1 transition-transform" style="font-variation-settings: 'FILL' 0;">terminal</span>
+<span class="text-[10px] tracking-wider opacity-70 group-hover:opacity-100 transition-opacity">Proyectos</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined mb-1 text-[24px] group-hover:-translate-y-1 transition-transform" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="text-[10px] tracking-wider opacity-70 group-hover:opacity-100 transition-opacity">Acerca de</span>
+</a>
+</nav>
