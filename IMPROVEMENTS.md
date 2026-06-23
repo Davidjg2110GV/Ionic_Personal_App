@@ -74,3 +74,7 @@ La nueva versión de la interfaz ha sido diseñada priorizando una estética vis
   - Se configuró `will-change: transform, opacity` en todas las clases animadas para precalentar la memoria de texturas del navegador.
   - Se redujo el radio de desenfoque de los filtros CSS (`filter: blur` de `150px` a `100px`) disminuyendo significativamente la carga de tasa de relleno de la GPU.
   - Se optimizaron las demoras de entrada de la animación (`delay` más cortos de `60ms` a `300ms`) logrando una velocidad de respuesta al cargar la página un 40% más rápida y fluida.
+
+### 12. Localización y Optimización de Assets (Imágenes del Perfil)
+- **Pasado:** La imagen de perfil dependía de un enlace externo (`https://i.ibb.co/...`), lo cual causaba demoras en la carga de la página (latency) y vulnerabilidades de disponibilidad de terceros.
+- **Mejora:** La imagen de perfil se descargó, optimizó y colocó dentro del directorio de recursos locales (`src/assets/profile.jpg`). De este modo, la carga se realiza de manera instantánea junto con el resto del bundle de producción y se asegura la fiabilidad del despliegue en Vercel.

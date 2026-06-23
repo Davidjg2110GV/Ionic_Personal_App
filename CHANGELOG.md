@@ -10,11 +10,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Phase 3] - 2026-06-22
 
 ### Added
+- Local high-quality profile picture (`profile.jpg`) placed in `src/assets/` to replace external image hosting dependence.
 - GPU hardware acceleration (`translate3d` transforms) for all keyframe animations.
 - Browser layer caching optimizations via `will-change: transform, opacity` to prevent repaint delays and optimize memory.
 - Paint isolation (`contain: strict`) on `.aurora-container` to block page-wide reflow storm overheads.
 
 ### Changed
+- Configured `fotoUrl` in `informacion-personal.page.ts` to reference local `assets/profile.jpg`.
+- Updated contact page footer year reference to 2026.
 - Snappier entry animation delays (reduced offsets from `100ms-500ms` down to `60ms-300ms`) for a more responsive initial paint.
 - Optimised aurora blur radii (from `150px` to `100px`) to prevent GPU rasterization performance degradation.
 - Overhauled `informacion-personal` styles to introduce chronological timelines, custom skill indicators, and spaced card layouts.
